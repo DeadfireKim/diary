@@ -26,6 +26,15 @@
 *~
 .cursor/
 
+# claude local settings
+.claude/settings.local.json
+.claude/cache/
+.claude/debug/
+.claude/downloads/
+.claude/file-history/
+.claude/history.jsonl
+.claude/plans/
+
 # debug
 npm-debug.log*
 yarn-debug.log*

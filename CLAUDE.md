@@ -46,6 +46,15 @@ src/
 │       │   └── next-themes.provider.tsx
 │       └── react-query/
 │           └── react-query.provider.tsx
+.claude/
+└── rules/                        # 개발 규칙 문서
+    ├── 01-common.md             # 공통 개발 규칙
+    ├── 02-wireframe.md          # Wireframe 및 CSS 규칙
+    ├── 03-ui.md                 # UI 및 에셋 규칙
+    ├── 04-func.md               # 기능 구현 규칙
+    └── 05-func.role.md          # 권한 분기 및 가드 규칙
+docs/
+└── .pdca-status.json            # bkit PDCA 상태 관리
 ```
 
 ## 주요 기능
@@ -91,6 +100,15 @@ src/
 | `/pictures` | 사진 목록 | Public |
 
 ## 개발 규칙
+
+> 📖 상세한 개발 규칙은 `.claude/rules/` 폴더의 문서를 참조하세요.
+> - [01-common.md](.claude/rules/01-common.md) - 공통 개발 규칙
+> - [02-wireframe.md](.claude/rules/02-wireframe.md) - Wireframe 및 CSS 규칙
+> - [03-ui.md](.claude/rules/03-ui.md) - UI 및 에셋 규칙
+> - [04-func.md](.claude/rules/04-func.md) - 기능 구현 규칙
+> - [05-func.role.md](.claude/rules/05-func.role.md) - 권한 분기 및 가드 규칙
+
+## 핵심 개발 규칙 요약
 
 ### Import 경로
 - `@/` 별칭 사용 (tsconfig paths)
