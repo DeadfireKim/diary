@@ -76,11 +76,6 @@ function ModalPortal({ isOpen, onClose, children }: ModalPortalProps) {
     return () => setMounted(false);
   }, []);
 
-  // 서버 사이드 렌더링 시 포털을 사용하지 않음
-  if (!mounted) {
-    return null;
-  }
-
   // ESC 키로 모달 닫기
   React.useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
@@ -100,6 +95,11 @@ function ModalPortal({ isOpen, onClose, children }: ModalPortalProps) {
       document.body.style.overflow = "unset";
     };
   }, [isOpen, onClose]);
+
+  // 서버 사이드 렌더링 시 포털을 사용하지 않음
+  if (!mounted) {
+    return null;
+  }
 
   if (!isOpen) {
     return null;
