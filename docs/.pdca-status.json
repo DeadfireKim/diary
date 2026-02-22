@@ -1,12 +1,18 @@
 {
   "version": "2.0",
-  "lastUpdated": "2026-02-21T03:06:51.167Z",
+  "lastUpdated": "2026-02-22T12:09:44.495Z",
   "activeFeatures": [
     "constants",
     "modal",
     "diary",
     "next-themes",
-    "react-query"
+    "react-query",
+    "button",
+    "input",
+    "pagination",
+    "searchbar",
+    "selectbox",
+    "toggle"
   ],
   "primaryFeature": "constants",
   "features": {
@@ -32,7 +38,7 @@
       "documents": {},
       "timestamps": {
         "started": "2026-02-21T03:02:38.120Z",
-        "lastUpdated": "2026-02-21T03:02:38.120Z"
+        "lastUpdated": "2026-02-22T08:29:05.942Z"
       },
       "lastFile": "/Users/tj/src/diary/src/commons/providers/modal/modal.provider.tsx"
     },
@@ -58,7 +64,7 @@
       "documents": {},
       "timestamps": {
         "started": "2026-02-21T03:06:12.455Z",
-        "lastUpdated": "2026-02-21T03:06:12.455Z"
+        "lastUpdated": "2026-02-22T08:28:37.026Z"
       },
       "lastFile": "/Users/tj/src/diary/src/commons/providers/next-themes/next-themes.provider.tsx"
     },
@@ -74,6 +80,84 @@
         "lastUpdated": "2026-02-21T03:06:26.385Z"
       },
       "lastFile": "/Users/tj/src/diary/src/commons/providers/react-query/react-query.provider.tsx"
+    },
+    "button": {
+      "phase": "do",
+      "phaseNumber": 3,
+      "matchRate": null,
+      "iterationCount": 0,
+      "requirements": [],
+      "documents": {},
+      "timestamps": {
+        "started": "2026-02-22T08:27:34.787Z",
+        "lastUpdated": "2026-02-22T08:48:04.552Z"
+      },
+      "lastFile": "/Users/tj/src/diary/src/commons/components/button/index.tsx"
+    },
+    "input": {
+      "phase": "do",
+      "phaseNumber": 3,
+      "matchRate": null,
+      "iterationCount": 0,
+      "requirements": [],
+      "documents": {},
+      "timestamps": {
+        "started": "2026-02-22T08:58:22.403Z",
+        "lastUpdated": "2026-02-22T08:58:22.403Z"
+      },
+      "lastFile": "/Users/tj/src/diary/src/commons/components/input/index.tsx"
+    },
+    "pagination": {
+      "phase": "do",
+      "phaseNumber": 3,
+      "matchRate": null,
+      "iterationCount": 0,
+      "requirements": [],
+      "documents": {},
+      "timestamps": {
+        "started": "2026-02-22T09:03:40.006Z",
+        "lastUpdated": "2026-02-22T09:03:40.006Z"
+      },
+      "lastFile": "/Users/tj/src/diary/src/commons/components/pagination/index.tsx"
+    },
+    "searchbar": {
+      "phase": "do",
+      "phaseNumber": 3,
+      "matchRate": null,
+      "iterationCount": 0,
+      "requirements": [],
+      "documents": {},
+      "timestamps": {
+        "started": "2026-02-22T09:07:04.252Z",
+        "lastUpdated": "2026-02-22T09:07:04.252Z"
+      },
+      "lastFile": "/Users/tj/src/diary/src/commons/components/searchbar/index.tsx"
+    },
+    "selectbox": {
+      "phase": "do",
+      "phaseNumber": 3,
+      "matchRate": null,
+      "iterationCount": 0,
+      "requirements": [],
+      "documents": {},
+      "timestamps": {
+        "started": "2026-02-22T12:00:25.120Z",
+        "lastUpdated": "2026-02-22T12:00:25.120Z"
+      },
+      "lastFile": "/Users/tj/src/diary/src/commons/components/selectbox/index.tsx"
+    },
+    "toggle": {
+      "phase": "do",
+      "phaseNumber": 3,
+      "matchRate": null,
+      "iterationCount": 0,
+      "requirements": [],
+      "documents": {},
+      "timestamps": {
+        "started": "2026-02-22T12:09:08.540Z",
+        "lastUpdated": "2026-02-22T12:09:44.495Z"
+      },
+      "lastFile": "/Users/tj/src/diary/src/commons/components/toggle/index.tsx"
     }
   },
   "pipeline": {
@@ -84,7 +168,7 @@
   "session": {
     "startedAt": "2026-02-20T05:42:45.211Z",
     "onboardingCompleted": false,
-    "lastActivity": "2026-02-21T03:06:51.167Z"
+    "lastActivity": "2026-02-22T12:09:44.495Z"
   },
   "history": [
     {
@@ -138,6 +222,72 @@
     {
       "timestamp": "2026-02-21T03:06:51.167Z",
       "feature": "diary",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-02-22T08:27:34.787Z",
+      "feature": "button",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-02-22T08:28:37.026Z",
+      "feature": "next-themes",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-02-22T08:29:05.942Z",
+      "feature": "modal",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-02-22T08:48:04.552Z",
+      "feature": "button",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-02-22T08:58:22.403Z",
+      "feature": "input",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-02-22T09:03:40.006Z",
+      "feature": "pagination",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-02-22T09:07:04.252Z",
+      "feature": "searchbar",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-02-22T12:00:25.120Z",
+      "feature": "selectbox",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-02-22T12:09:08.540Z",
+      "feature": "toggle",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-02-22T12:09:42.919Z",
+      "feature": "toggle",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-02-22T12:09:44.495Z",
+      "feature": "toggle",
       "phase": "do",
       "action": "updated"
     }
