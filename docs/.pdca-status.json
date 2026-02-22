@@ -1,0 +1,145 @@
+{
+  "version": "2.0",
+  "lastUpdated": "2026-02-21T03:06:51.167Z",
+  "activeFeatures": [
+    "constants",
+    "modal",
+    "diary",
+    "next-themes",
+    "react-query"
+  ],
+  "primaryFeature": "constants",
+  "features": {
+    "constants": {
+      "phase": "do",
+      "phaseNumber": 3,
+      "matchRate": null,
+      "iterationCount": 0,
+      "requirements": [],
+      "documents": {},
+      "timestamps": {
+        "started": "2026-02-20T11:23:50.335Z",
+        "lastUpdated": "2026-02-20T12:30:23.407Z"
+      },
+      "lastFile": "/Users/tj/src/diary/src/commons/constants/url.ts"
+    },
+    "modal": {
+      "phase": "do",
+      "phaseNumber": 3,
+      "matchRate": null,
+      "iterationCount": 0,
+      "requirements": [],
+      "documents": {},
+      "timestamps": {
+        "started": "2026-02-21T03:02:38.120Z",
+        "lastUpdated": "2026-02-21T03:02:38.120Z"
+      },
+      "lastFile": "/Users/tj/src/diary/src/commons/providers/modal/modal.provider.tsx"
+    },
+    "diary": {
+      "phase": "do",
+      "phaseNumber": 3,
+      "matchRate": null,
+      "iterationCount": 0,
+      "requirements": [],
+      "documents": {},
+      "timestamps": {
+        "started": "2026-02-21T03:02:42.205Z",
+        "lastUpdated": "2026-02-21T03:06:51.167Z"
+      },
+      "lastFile": "/Users/tj/src/diary/src/app/layout.tsx"
+    },
+    "next-themes": {
+      "phase": "do",
+      "phaseNumber": 3,
+      "matchRate": null,
+      "iterationCount": 0,
+      "requirements": [],
+      "documents": {},
+      "timestamps": {
+        "started": "2026-02-21T03:06:12.455Z",
+        "lastUpdated": "2026-02-21T03:06:12.455Z"
+      },
+      "lastFile": "/Users/tj/src/diary/src/commons/providers/next-themes/next-themes.provider.tsx"
+    },
+    "react-query": {
+      "phase": "do",
+      "phaseNumber": 3,
+      "matchRate": null,
+      "iterationCount": 0,
+      "requirements": [],
+      "documents": {},
+      "timestamps": {
+        "started": "2026-02-21T03:06:26.385Z",
+        "lastUpdated": "2026-02-21T03:06:26.385Z"
+      },
+      "lastFile": "/Users/tj/src/diary/src/commons/providers/react-query/react-query.provider.tsx"
+    }
+  },
+  "pipeline": {
+    "currentPhase": 1,
+    "level": "Dynamic",
+    "phaseHistory": []
+  },
+  "session": {
+    "startedAt": "2026-02-20T05:42:45.211Z",
+    "onboardingCompleted": false,
+    "lastActivity": "2026-02-21T03:06:51.167Z"
+  },
+  "history": [
+    {
+      "timestamp": "2026-02-20T11:23:50.335Z",
+      "feature": "constants",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-02-20T12:30:23.407Z",
+      "feature": "constants",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-02-21T03:02:38.120Z",
+      "feature": "modal",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-02-21T03:02:42.205Z",
+      "feature": "diary",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-02-21T03:02:46.192Z",
+      "feature": "diary",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-02-21T03:06:12.455Z",
+      "feature": "next-themes",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-02-21T03:06:26.385Z",
+      "feature": "react-query",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-02-21T03:06:46.507Z",
+      "feature": "diary",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-02-21T03:06:51.167Z",
+      "feature": "diary",
+      "phase": "do",
+      "action": "updated"
+    }
+  ]
+}
