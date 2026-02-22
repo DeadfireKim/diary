@@ -1,115 +1,124 @@
 .button {
   display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: center;
   border: none;
   cursor: pointer;
+  font-weight: 500;
   transition: all 0.2s ease-in-out;
-  box-sizing: border-box;
-  white-space: nowrap;
-  font-family: var(--font-base);
   border-radius: 8px;
+  font-family: inherit;
 }
 
-.button:focus {
-  outline: none;
-}
-
-.button:active {
-  transform: scale(0.98);
-}
-
-.fullWidth {
-  width: 100%;
-}
-
-.disabled {
+.button:disabled {
   cursor: not-allowed;
   opacity: 0.5;
-}
-
-.disabled:active {
-  transform: none;
 }
 
 /* Size Variants */
 .size-small {
   padding: 8px 16px;
-  font: var(--text-mobile-body-03);
-  min-height: 32px;
-  gap: 4px;
+  font-size: 14px;
+  line-height: 20px;
+  min-height: 36px;
 }
 
 .size-medium {
   padding: 12px 24px;
-  font: var(--text-mobile-body-02m);
-  min-height: 44px;
-  gap: 6px;
+  font-size: 16px;
+  line-height: 24px;
+  min-height: 48px;
 }
 
 .size-large {
   padding: 16px 32px;
-  font: var(--text-mobile-body-01);
-  min-height: 56px;
-  gap: 8px;
+  font-size: 18px;
+  line-height: 28px;
+  min-height: 60px;
 }
 
-/* Primary Variant */
+/* Light Theme - Primary */
 .variant-primary.theme-light {
   background-color: var(--color-blue-50);
   color: var(--color-gray-white);
 }
 
-.variant-primary.theme-light:hover:not(.disabled) {
+.variant-primary.theme-light:hover:not(:disabled) {
   background-color: var(--color-blue-60);
 }
 
-.variant-primary.theme-dark {
-  background-color: var(--color-blue-40);
-  color: var(--color-gray-black);
+.variant-primary.theme-light:active:not(:disabled) {
+  background-color: var(--color-blue-70);
 }
 
-.variant-primary.theme-dark:hover:not(.disabled) {
-  background-color: var(--color-blue-50);
-}
-
-/* Secondary Variant */
+/* Light Theme - Secondary */
 .variant-secondary.theme-light {
-  background-color: var(--color-gray-10);
-  color: var(--color-gray-90);
+  background-color: var(--color-gray-05);
+  color: var(--color-gray-80);
+  border: 1px solid var(--color-gray-20);
 }
 
-.variant-secondary.theme-light:hover:not(.disabled) {
+.variant-secondary.theme-light:hover:not(:disabled) {
+  background-color: var(--color-gray-10);
+}
+
+.variant-secondary.theme-light:active:not(:disabled) {
   background-color: var(--color-gray-20);
 }
 
-.variant-secondary.theme-dark {
-  background-color: var(--color-gray-70);
-  color: var(--color-gray-05);
-}
-
-.variant-secondary.theme-dark:hover:not(.disabled) {
-  background-color: var(--color-gray-60);
-}
-
-/* Tertiary Variant */
+/* Light Theme - Tertiary */
 .variant-tertiary.theme-light {
   background-color: transparent;
   color: var(--color-blue-50);
-  border: 1px solid var(--color-blue-50);
 }
 
-.variant-tertiary.theme-light:hover:not(.disabled) {
+.variant-tertiary.theme-light:hover:not(:disabled) {
   background-color: var(--color-blue-05);
 }
 
+.variant-tertiary.theme-light:active:not(:disabled) {
+  background-color: var(--color-blue-10);
+}
+
+/* Dark Theme - Primary */
+.variant-primary.theme-dark {
+  background-color: var(--color-blue-60);
+  color: var(--color-gray-white);
+}
+
+.variant-primary.theme-dark:hover:not(:disabled) {
+  background-color: var(--color-blue-50);
+}
+
+.variant-primary.theme-dark:active:not(:disabled) {
+  background-color: var(--color-blue-40);
+}
+
+/* Dark Theme - Secondary */
+.variant-secondary.theme-dark {
+  background-color: var(--color-gray-80);
+  color: var(--color-gray-white);
+  border: 1px solid var(--color-gray-60);
+}
+
+.variant-secondary.theme-dark:hover:not(:disabled) {
+  background-color: var(--color-gray-70);
+}
+
+.variant-secondary.theme-dark:active:not(:disabled) {
+  background-color: var(--color-gray-60);
+}
+
+/* Dark Theme - Tertiary */
 .variant-tertiary.theme-dark {
   background-color: transparent;
   color: var(--color-blue-40);
-  border: 1px solid var(--color-blue-40);
 }
 
-.variant-tertiary.theme-dark:hover:not(.disabled) {
+.variant-tertiary.theme-dark:hover:not(:disabled) {
   background-color: var(--color-gray-80);
+}
+
+.variant-tertiary.theme-dark:active:not(:disabled) {
+  background-color: var(--color-gray-70);
 }
