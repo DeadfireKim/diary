@@ -1,0 +1,271 @@
+.container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.container.disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+
+.track {
+  position: relative;
+  display: flex;
+  align-items: center;
+  border-radius: 100px;
+  transition: all 0.2s ease-in-out;
+  flex-shrink: 0;
+}
+
+.thumb {
+  position: absolute;
+  border-radius: 50%;
+  background-color: var(--color-gray-white);
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.label {
+  font-weight: 500;
+}
+
+/* Size Variants */
+.size-small .track {
+  width: 36px;
+  height: 20px;
+  padding: 2px;
+}
+
+.size-small .thumb {
+  width: 16px;
+  height: 16px;
+  left: 2px;
+}
+
+.size-small .input:checked ~ .track .thumb {
+  left: 18px;
+}
+
+.size-small .label {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.size-medium .track {
+  width: 44px;
+  height: 24px;
+  padding: 2px;
+}
+
+.size-medium .thumb {
+  width: 20px;
+  height: 20px;
+  left: 2px;
+}
+
+.size-medium .input:checked ~ .track .thumb {
+  left: 22px;
+}
+
+.size-medium .label {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.size-large .track {
+  width: 52px;
+  height: 28px;
+  padding: 2px;
+}
+
+.size-large .thumb {
+  width: 24px;
+  height: 24px;
+  left: 2px;
+}
+
+.size-large .input:checked ~ .track .thumb {
+  left: 26px;
+}
+
+.size-large .label {
+  font-size: 18px;
+  line-height: 28px;
+}
+
+/* Light Theme - Primary */
+.variant-primary.theme-light .track {
+  background-color: var(--color-gray-30);
+}
+
+.variant-primary.theme-light .input:checked ~ .track {
+  background-color: var(--color-blue-50);
+}
+
+.variant-primary.theme-light:hover:not(.disabled) .track {
+  background-color: var(--color-gray-40);
+}
+
+.variant-primary.theme-light:hover:not(.disabled) .input:checked ~ .track {
+  background-color: var(--color-blue-60);
+}
+
+.variant-primary.theme-light .label {
+  color: var(--color-gray-90);
+}
+
+/* Light Theme - Secondary */
+.variant-secondary.theme-light .track {
+  background-color: var(--color-gray-20);
+  border: 1px solid var(--color-gray-30);
+}
+
+.variant-secondary.theme-light .input:checked ~ .track {
+  background-color: var(--color-blue-10);
+  border-color: var(--color-blue-50);
+}
+
+.variant-secondary.theme-light:hover:not(.disabled) .track {
+  background-color: var(--color-gray-30);
+}
+
+.variant-secondary.theme-light:hover:not(.disabled) .input:checked ~ .track {
+  background-color: var(--color-blue-20);
+}
+
+.variant-secondary.theme-light .thumb {
+  background-color: var(--color-gray-60);
+}
+
+.variant-secondary.theme-light .input:checked ~ .track .thumb {
+  background-color: var(--color-blue-50);
+}
+
+.variant-secondary.theme-light .label {
+  color: var(--color-gray-90);
+}
+
+/* Light Theme - Tertiary */
+.variant-tertiary.theme-light .track {
+  background-color: transparent;
+  border: 2px solid var(--color-gray-30);
+}
+
+.variant-tertiary.theme-light .input:checked ~ .track {
+  background-color: transparent;
+  border-color: var(--color-blue-50);
+}
+
+.variant-tertiary.theme-light:hover:not(.disabled) .track {
+  border-color: var(--color-gray-50);
+}
+
+.variant-tertiary.theme-light:hover:not(.disabled) .input:checked ~ .track {
+  border-color: var(--color-blue-60);
+}
+
+.variant-tertiary.theme-light .thumb {
+  background-color: var(--color-gray-50);
+}
+
+.variant-tertiary.theme-light .input:checked ~ .track .thumb {
+  background-color: var(--color-blue-50);
+}
+
+.variant-tertiary.theme-light .label {
+  color: var(--color-gray-90);
+}
+
+/* Dark Theme - Primary */
+.variant-primary.theme-dark .track {
+  background-color: var(--color-gray-60);
+}
+
+.variant-primary.theme-dark .input:checked ~ .track {
+  background-color: var(--color-blue-60);
+}
+
+.variant-primary.theme-dark:hover:not(.disabled) .track {
+  background-color: var(--color-gray-50);
+}
+
+.variant-primary.theme-dark:hover:not(.disabled) .input:checked ~ .track {
+  background-color: var(--color-blue-50);
+}
+
+.variant-primary.theme-dark .label {
+  color: var(--color-gray-white);
+}
+
+/* Dark Theme - Secondary */
+.variant-secondary.theme-dark .track {
+  background-color: var(--color-gray-70);
+  border: 1px solid var(--color-gray-60);
+}
+
+.variant-secondary.theme-dark .input:checked ~ .track {
+  background-color: var(--color-gray-80);
+  border-color: var(--color-blue-40);
+}
+
+.variant-secondary.theme-dark:hover:not(.disabled) .track {
+  background-color: var(--color-gray-60);
+}
+
+.variant-secondary.theme-dark:hover:not(.disabled) .input:checked ~ .track {
+  background-color: var(--color-gray-70);
+}
+
+.variant-secondary.theme-dark .thumb {
+  background-color: var(--color-gray-40);
+}
+
+.variant-secondary.theme-dark .input:checked ~ .track .thumb {
+  background-color: var(--color-blue-40);
+}
+
+.variant-secondary.theme-dark .label {
+  color: var(--color-gray-white);
+}
+
+/* Dark Theme - Tertiary */
+.variant-tertiary.theme-dark .track {
+  background-color: transparent;
+  border: 2px solid var(--color-gray-60);
+}
+
+.variant-tertiary.theme-dark .input:checked ~ .track {
+  background-color: transparent;
+  border-color: var(--color-blue-40);
+}
+
+.variant-tertiary.theme-dark:hover:not(.disabled) .track {
+  border-color: var(--color-gray-50);
+}
+
+.variant-tertiary.theme-dark:hover:not(.disabled) .input:checked ~ .track {
+  border-color: var(--color-blue-30);
+}
+
+.variant-tertiary.theme-dark .thumb {
+  background-color: var(--color-gray-50);
+}
+
+.variant-tertiary.theme-dark .input:checked ~ .track .thumb {
+  background-color: var(--color-blue-40);
+}
+
+.variant-tertiary.theme-dark .label {
+  color: var(--color-gray-white);
+}
