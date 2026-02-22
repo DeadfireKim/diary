@@ -1,0 +1,202 @@
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.pageButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+  border-radius: 6px;
+  background-color: transparent;
+}
+
+.pageButton:disabled {
+  cursor: not-allowed;
+  opacity: 0.3;
+}
+
+.pageButton:focus {
+  outline: none;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2em;
+  font-weight: 700;
+}
+
+.dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  user-select: none;
+}
+
+/* Size Variants */
+.size-small .pageButton {
+  min-width: 32px;
+  min-height: 32px;
+  padding: 6px;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.size-small .dots {
+  min-width: 32px;
+  font-size: 14px;
+}
+
+.size-medium .pageButton {
+  min-width: 40px;
+  min-height: 40px;
+  padding: 8px;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.size-medium .dots {
+  min-width: 40px;
+  font-size: 16px;
+}
+
+.size-large .pageButton {
+  min-width: 48px;
+  min-height: 48px;
+  padding: 10px;
+  font-size: 18px;
+  line-height: 28px;
+}
+
+.size-large .dots {
+  min-width: 48px;
+  font-size: 18px;
+}
+
+/* Light Theme - Primary */
+.variant-primary.theme-light .pageButton {
+  color: var(--color-gray-80);
+}
+
+.variant-primary.theme-light .pageButton:hover:not(:disabled):not(.active) {
+  background-color: var(--color-blue-05);
+  color: var(--color-blue-60);
+}
+
+.variant-primary.theme-light .pageButton.active {
+  background-color: var(--color-blue-50);
+  color: var(--color-gray-white);
+}
+
+.variant-primary.theme-light .dots {
+  color: var(--color-gray-60);
+}
+
+/* Light Theme - Secondary */
+.variant-secondary.theme-light .pageButton {
+  color: var(--color-gray-80);
+  border: 1px solid var(--color-gray-20);
+}
+
+.variant-secondary.theme-light .pageButton:hover:not(:disabled):not(.active) {
+  background-color: var(--color-gray-05);
+  border-color: var(--color-gray-30);
+}
+
+.variant-secondary.theme-light .pageButton.active {
+  background-color: var(--color-gray-20);
+  border-color: var(--color-gray-40);
+  color: var(--color-gray-90);
+}
+
+.variant-secondary.theme-light .dots {
+  color: var(--color-gray-60);
+}
+
+/* Light Theme - Tertiary */
+.variant-tertiary.theme-light .pageButton {
+  color: var(--color-blue-50);
+}
+
+.variant-tertiary.theme-light .pageButton:hover:not(:disabled):not(.active) {
+  color: var(--color-blue-60);
+  text-decoration: underline;
+}
+
+.variant-tertiary.theme-light .pageButton.active {
+  color: var(--color-blue-70);
+  font-weight: 700;
+}
+
+.variant-tertiary.theme-light .dots {
+  color: var(--color-gray-60);
+}
+
+/* Dark Theme - Primary */
+.variant-primary.theme-dark .pageButton {
+  color: var(--color-gray-10);
+}
+
+.variant-primary.theme-dark .pageButton:hover:not(:disabled):not(.active) {
+  background-color: var(--color-gray-80);
+  color: var(--color-blue-40);
+}
+
+.variant-primary.theme-dark .pageButton.active {
+  background-color: var(--color-blue-60);
+  color: var(--color-gray-white);
+}
+
+.variant-primary.theme-dark .dots {
+  color: var(--color-gray-50);
+}
+
+/* Dark Theme - Secondary */
+.variant-secondary.theme-dark .pageButton {
+  color: var(--color-gray-10);
+  border: 1px solid var(--color-gray-60);
+}
+
+.variant-secondary.theme-dark .pageButton:hover:not(:disabled):not(.active) {
+  background-color: var(--color-gray-80);
+  border-color: var(--color-gray-50);
+}
+
+.variant-secondary.theme-dark .pageButton.active {
+  background-color: var(--color-gray-70);
+  border-color: var(--color-gray-50);
+  color: var(--color-gray-white);
+}
+
+.variant-secondary.theme-dark .dots {
+  color: var(--color-gray-50);
+}
+
+/* Dark Theme - Tertiary */
+.variant-tertiary.theme-dark .pageButton {
+  color: var(--color-blue-40);
+}
+
+.variant-tertiary.theme-dark .pageButton:hover:not(:disabled):not(.active) {
+  color: var(--color-blue-30);
+  text-decoration: underline;
+}
+
+.variant-tertiary.theme-dark .pageButton.active {
+  color: var(--color-blue-20);
+  font-weight: 700;
+}
+
+.variant-tertiary.theme-dark .dots {
+  color: var(--color-gray-50);
+}
