@@ -100,6 +100,7 @@ export const WithoutFirstLast: Story = {
 
 // 6. Custom Sibling Count - siblingCount 조정
 export const CustomSiblingCount: Story = {
+  args: { currentPage: 1, totalPages: 1, onPageChange: () => {} },
   render: () => (
     <div style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
       <div>
@@ -141,6 +142,7 @@ export const CustomSiblingCount: Story = {
 
 // 7. All Variants - variant 비교
 export const AllVariants: Story = {
+  args: { currentPage: 1, totalPages: 1, onPageChange: () => {} },
   render: () => (
     <div style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
       <div>
@@ -182,6 +184,7 @@ export const AllVariants: Story = {
 
 // 8. All Sizes - size 비교
 export const AllSizes: Story = {
+  args: { currentPage: 1, totalPages: 1, onPageChange: () => {} },
   render: () => (
     <div style={{ display: "flex", flexDirection: "column", gap: "24px", alignItems: "flex-start" }}>
       <div>
@@ -223,6 +226,7 @@ export const AllSizes: Story = {
 
 // 9. Interactive - Controlled 모드
 export const Interactive: Story = {
+  args: { currentPage: 1, totalPages: 1, onPageChange: () => {} },
   render: () => {
     const [currentPage, setCurrentPage] = useState(1);
     const totalPages = 20;
@@ -288,6 +292,7 @@ export const Interactive: Story = {
 
 // 10. Light Theme - 모든 조합 (Light)
 export const LightTheme: Story = {
+  args: { currentPage: 1, totalPages: 1, onPageChange: () => {} },
   parameters: {
     backgrounds: { default: "light" },
   },
@@ -397,6 +402,7 @@ export const LightTheme: Story = {
 
 // 11. Dark Theme - 모든 조합 (Dark)
 export const DarkTheme: Story = {
+  args: { currentPage: 1, totalPages: 1, onPageChange: () => {} },
   parameters: {
     backgrounds: { default: "dark" },
   },
@@ -527,6 +533,7 @@ export const DarkTheme: Story = {
 
 // 12. All Combinations - 18개 모든 조합
 export const AllCombinations: Story = {
+  args: { currentPage: 1, totalPages: 1, onPageChange: () => {} },
   render: () => {
     const variants = ["primary", "secondary", "tertiary"] as const;
     const sizes = ["small", "medium", "large"] as const;

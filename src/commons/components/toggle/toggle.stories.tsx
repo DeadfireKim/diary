@@ -93,6 +93,7 @@ export const Disabled: Story = {
 
 // 7. All Variants - variant 비교
 export const AllVariants: Story = {
+  args: {},
   render: () => (
     <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
       <Toggle variant="primary" label="Primary Toggle" />
@@ -104,6 +105,7 @@ export const AllVariants: Story = {
 
 // 8. All Sizes - size 비교
 export const AllSizes: Story = {
+  args: {},
   render: () => (
     <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
       <Toggle size="small" label="Small Toggle" />
@@ -115,6 +117,7 @@ export const AllSizes: Story = {
 
 // 9. Controlled - Controlled 모드
 export const Controlled: Story = {
+  args: {},
   render: () => {
     const [checked, setChecked] = useState(false);
     return (
@@ -142,6 +145,7 @@ export const Controlled: Story = {
 
 // 10. Light Theme - 모든 조합 (Light)
 export const LightTheme: Story = {
+  args: {},
   parameters: {
     backgrounds: { default: "light" },
   },
@@ -188,6 +192,7 @@ export const LightTheme: Story = {
 
 // 11. Dark Theme - 모든 조합 (Dark)
 export const DarkTheme: Story = {
+  args: {},
   parameters: {
     backgrounds: { default: "dark" },
   },
@@ -255,6 +260,7 @@ export const DarkTheme: Story = {
 
 // 12. All Combinations - 18개 모든 조합
 export const AllCombinations: Story = {
+  args: {},
   render: () => {
     const variants = ["primary", "secondary", "tertiary"] as const;
     const sizes = ["small", "medium", "large"] as const;

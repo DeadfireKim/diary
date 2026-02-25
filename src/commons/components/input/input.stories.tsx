@@ -110,6 +110,7 @@ export const Disabled: Story = {
 
 // 7. All Variants - variant 비교
 export const AllVariants: Story = {
+  args: {},
   render: () => (
     <div style={{ display: "flex", flexDirection: "column", gap: "16px", minWidth: "300px" }}>
       <Input variant="primary" placeholder="Primary variant" />
@@ -121,6 +122,7 @@ export const AllVariants: Story = {
 
 // 8. All Sizes - size 비교
 export const AllSizes: Story = {
+  args: {},
   render: () => (
     <div style={{ display: "flex", flexDirection: "column", gap: "16px", minWidth: "300px" }}>
       <Input size="small" placeholder="Small size" />
@@ -132,6 +134,7 @@ export const AllSizes: Story = {
 
 // 9. Light Theme - 모든 조합 (Light)
 export const LightTheme: Story = {
+  args: {},
   parameters: {
     backgrounds: { default: "light" },
   },
@@ -235,6 +238,7 @@ export const LightTheme: Story = {
 
 // 10. Dark Theme - 모든 조합 (Dark)
 export const DarkTheme: Story = {
+  args: {},
   parameters: {
     backgrounds: { default: "dark" },
   },
@@ -359,6 +363,7 @@ export const DarkTheme: Story = {
 
 // 11. Error States - 에러 상태 모음
 export const ErrorStates: Story = {
+  args: {},
   render: () => (
     <div style={{ display: "flex", flexDirection: "column", gap: "16px", minWidth: "400px" }}>
       <Input
@@ -390,6 +395,7 @@ export const ErrorStates: Story = {
 
 // 12. All Combinations - 18개 모든 조합
 export const AllCombinations: Story = {
+  args: {},
   render: () => {
     const variants = ["primary", "secondary", "tertiary"] as const;
     const sizes = ["small", "medium", "large"] as const;

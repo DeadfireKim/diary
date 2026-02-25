@@ -58,6 +58,7 @@ export const Playground: Story = {
 
 // 3. All Variants - variant 비교
 export const AllVariants: Story = {
+  args: { children: "" },
   render: () => (
     <div style={{ display: "flex", gap: "16px", flexWrap: "wrap" }}>
       <Button variant="primary">Primary</Button>
@@ -69,6 +70,7 @@ export const AllVariants: Story = {
 
 // 4. All Sizes - size 비교
 export const AllSizes: Story = {
+  args: { children: "" },
   render: () => (
     <div
       style={{
@@ -87,6 +89,7 @@ export const AllSizes: Story = {
 
 // 5. Light Theme - 모든 조합 (Light)
 export const LightTheme: Story = {
+  args: { children: "" },
   parameters: {
     backgrounds: { default: "light" },
   },
@@ -151,6 +154,7 @@ export const LightTheme: Story = {
 
 // 6. Dark Theme - 모든 조합 (Dark)
 export const DarkTheme: Story = {
+  args: { children: "" },
   parameters: {
     backgrounds: { default: "dark" },
   },
@@ -236,6 +240,7 @@ export const DarkTheme: Story = {
 
 // 7. Disabled State - 비활성 상태
 export const Disabled: Story = {
+  args: { children: "" },
   render: () => (
     <div style={{ display: "flex", gap: "16px", flexWrap: "wrap" }}>
       <Button variant="primary" disabled>
@@ -253,6 +258,7 @@ export const Disabled: Story = {
 
 // 8. All Combinations - 18개 모든 조합 (3x3x2)
 export const AllCombinations: Story = {
+  args: { children: "" },
   render: () => {
     const variants = ["primary", "secondary", "tertiary"] as const;
     const sizes = ["small", "medium", "large"] as const;

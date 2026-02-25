@@ -1,0 +1,355 @@
+{
+  "timestamp": "2026-02-24T05:18:57.701Z",
+  "reason": "compaction",
+  "status": {
+    "version": "2.0",
+    "lastUpdated": "2026-02-24T04:53:56.390Z",
+    "activeFeatures": [
+      "constants",
+      "modal",
+      "diary",
+      "next-themes",
+      "react-query",
+      "button",
+      "input",
+      "pagination",
+      "searchbar",
+      "selectbox",
+      "toggle",
+      ".storybook"
+    ],
+    "primaryFeature": "constants",
+    "features": {
+      "constants": {
+        "phase": "do",
+        "phaseNumber": 3,
+        "matchRate": null,
+        "iterationCount": 0,
+        "requirements": [],
+        "documents": {},
+        "timestamps": {
+          "started": "2026-02-20T11:23:50.335Z",
+          "lastUpdated": "2026-02-20T12:30:23.407Z"
+        },
+        "lastFile": "/Users/tj/src/diary/src/commons/constants/url.ts"
+      },
+      "modal": {
+        "phase": "do",
+        "phaseNumber": 3,
+        "matchRate": null,
+        "iterationCount": 0,
+        "requirements": [],
+        "documents": {},
+        "timestamps": {
+          "started": "2026-02-21T03:02:38.120Z",
+          "lastUpdated": "2026-02-22T08:29:05.942Z"
+        },
+        "lastFile": "/Users/tj/src/diary/src/commons/providers/modal/modal.provider.tsx"
+      },
+      "diary": {
+        "phase": "do",
+        "phaseNumber": 3,
+        "matchRate": null,
+        "iterationCount": 0,
+        "requirements": [],
+        "documents": {},
+        "timestamps": {
+          "started": "2026-02-21T03:02:42.205Z",
+          "lastUpdated": "2026-02-21T03:06:51.167Z"
+        },
+        "lastFile": "/Users/tj/src/diary/src/app/layout.tsx"
+      },
+      "next-themes": {
+        "phase": "do",
+        "phaseNumber": 3,
+        "matchRate": null,
+        "iterationCount": 0,
+        "requirements": [],
+        "documents": {},
+        "timestamps": {
+          "started": "2026-02-21T03:06:12.455Z",
+          "lastUpdated": "2026-02-22T08:28:37.026Z"
+        },
+        "lastFile": "/Users/tj/src/diary/src/commons/providers/next-themes/next-themes.provider.tsx"
+      },
+      "react-query": {
+        "phase": "do",
+        "phaseNumber": 3,
+        "matchRate": null,
+        "iterationCount": 0,
+        "requirements": [],
+        "documents": {},
+        "timestamps": {
+          "started": "2026-02-21T03:06:26.385Z",
+          "lastUpdated": "2026-02-21T03:06:26.385Z"
+        },
+        "lastFile": "/Users/tj/src/diary/src/commons/providers/react-query/react-query.provider.tsx"
+      },
+      "button": {
+        "phase": "do",
+        "phaseNumber": 3,
+        "matchRate": null,
+        "iterationCount": 0,
+        "requirements": [],
+        "documents": {},
+        "timestamps": {
+          "started": "2026-02-22T08:27:34.787Z",
+          "lastUpdated": "2026-02-24T04:48:45.425Z"
+        },
+        "lastFile": "/Users/tj/src/diary/src/commons/components/button/button.stories.tsx"
+      },
+      "input": {
+        "phase": "do",
+        "phaseNumber": 3,
+        "matchRate": null,
+        "iterationCount": 0,
+        "requirements": [],
+        "documents": {},
+        "timestamps": {
+          "started": "2026-02-22T08:58:22.403Z",
+          "lastUpdated": "2026-02-24T04:50:41.201Z"
+        },
+        "lastFile": "/Users/tj/src/diary/src/commons/components/input/input.stories.tsx"
+      },
+      "pagination": {
+        "phase": "do",
+        "phaseNumber": 3,
+        "matchRate": null,
+        "iterationCount": 0,
+        "requirements": [],
+        "documents": {},
+        "timestamps": {
+          "started": "2026-02-22T09:03:40.006Z",
+          "lastUpdated": "2026-02-24T04:53:56.390Z"
+        },
+        "lastFile": "/Users/tj/src/diary/src/commons/components/pagination/pagination.stories.tsx"
+      },
+      "searchbar": {
+        "phase": "do",
+        "phaseNumber": 3,
+        "matchRate": null,
+        "iterationCount": 0,
+        "requirements": [],
+        "documents": {},
+        "timestamps": {
+          "started": "2026-02-22T09:07:04.252Z",
+          "lastUpdated": "2026-02-24T04:53:10.778Z"
+        },
+        "lastFile": "/Users/tj/src/diary/src/commons/components/searchbar/searchbar.stories.tsx"
+      },
+      "selectbox": {
+        "phase": "do",
+        "phaseNumber": 3,
+        "matchRate": null,
+        "iterationCount": 0,
+        "requirements": [],
+        "documents": {},
+        "timestamps": {
+          "started": "2026-02-22T12:00:25.120Z",
+          "lastUpdated": "2026-02-24T04:52:32.933Z"
+        },
+        "lastFile": "/Users/tj/src/diary/src/commons/components/selectbox/selectbox.stories.tsx"
+      },
+      "toggle": {
+        "phase": "do",
+        "phaseNumber": 3,
+        "matchRate": null,
+        "iterationCount": 0,
+        "requirements": [],
+        "documents": {},
+        "timestamps": {
+          "started": "2026-02-22T12:09:08.540Z",
+          "lastUpdated": "2026-02-24T04:51:55.042Z"
+        },
+        "lastFile": "/Users/tj/src/diary/src/commons/components/toggle/toggle.stories.tsx"
+      },
+      ".storybook": {
+        "phase": "do",
+        "phaseNumber": 3,
+        "matchRate": null,
+        "iterationCount": 0,
+        "requirements": [],
+        "documents": {},
+        "timestamps": {
+          "started": "2026-02-24T04:48:16.757Z",
+          "lastUpdated": "2026-02-24T04:48:16.757Z"
+        },
+        "lastFile": "/Users/tj/src/diary/.storybook/preview.ts"
+      }
+    },
+    "pipeline": {
+      "currentPhase": 1,
+      "level": "Dynamic",
+      "phaseHistory": []
+    },
+    "session": {
+      "startedAt": "2026-02-20T05:42:45.211Z",
+      "onboardingCompleted": false,
+      "lastActivity": "2026-02-24T04:53:56.390Z"
+    },
+    "history": [
+      {
+        "timestamp": "2026-02-20T11:23:50.335Z",
+        "feature": "constants",
+        "phase": "do",
+        "action": "updated"
+      },
+      {
+        "timestamp": "2026-02-20T12:30:23.407Z",
+        "feature": "constants",
+        "phase": "do",
+        "action": "updated"
+      },
+      {
+        "timestamp": "2026-02-21T03:02:38.120Z",
+        "feature": "modal",
+        "phase": "do",
+        "action": "updated"
+      },
+      {
+        "timestamp": "2026-02-21T03:02:42.205Z",
+        "feature": "diary",
+        "phase": "do",
+        "action": "updated"
+      },
+      {
+        "timestamp": "2026-02-21T03:02:46.192Z",
+        "feature": "diary",
+        "phase": "do",
+        "action": "updated"
+      },
+      {
+        "timestamp": "2026-02-21T03:06:12.455Z",
+        "feature": "next-themes",
+        "phase": "do",
+        "action": "updated"
+      },
+      {
+        "timestamp": "2026-02-21T03:06:26.385Z",
+        "feature": "react-query",
+        "phase": "do",
+        "action": "updated"
+      },
+      {
+        "timestamp": "2026-02-21T03:06:46.507Z",
+        "feature": "diary",
+        "phase": "do",
+        "action": "updated"
+      },
+      {
+        "timestamp": "2026-02-21T03:06:51.167Z",
+        "feature": "diary",
+        "phase": "do",
+        "action": "updated"
+      },
+      {
+        "timestamp": "2026-02-22T08:27:34.787Z",
+        "feature": "button",
+        "phase": "do",
+        "action": "updated"
+      },
+      {
+        "timestamp": "2026-02-22T08:28:37.026Z",
+        "feature": "next-themes",
+        "phase": "do",
+        "action": "updated"
+      },
+      {
+        "timestamp": "2026-02-22T08:29:05.942Z",
+        "feature": "modal",
+        "phase": "do",
+        "action": "updated"
+      },
+      {
+        "timestamp": "2026-02-22T08:48:04.552Z",
+        "feature": "button",
+        "phase": "do",
+        "action": "updated"
+      },
+      {
+        "timestamp": "2026-02-22T08:58:22.403Z",
+        "feature": "input",
+        "phase": "do",
+        "action": "updated"
+      },
+      {
+        "timestamp": "2026-02-22T09:03:40.006Z",
+        "feature": "pagination",
+        "phase": "do",
+        "action": "updated"
+      },
+      {
+        "timestamp": "2026-02-22T09:07:04.252Z",
+        "feature": "searchbar",
+        "phase": "do",
+        "action": "updated"
+      },
+      {
+        "timestamp": "2026-02-22T12:00:25.120Z",
+        "feature": "selectbox",
+        "phase": "do",
+        "action": "updated"
+      },
+      {
+        "timestamp": "2026-02-22T12:09:08.540Z",
+        "feature": "toggle",
+        "phase": "do",
+        "action": "updated"
+      },
+      {
+        "timestamp": "2026-02-22T12:09:42.919Z",
+        "feature": "toggle",
+        "phase": "do",
+        "action": "updated"
+      },
+      {
+        "timestamp": "2026-02-22T12:09:44.495Z",
+        "feature": "toggle",
+        "phase": "do",
+        "action": "updated"
+      },
+      {
+        "timestamp": "2026-02-24T04:48:16.757Z",
+        "feature": ".storybook",
+        "phase": "do",
+        "action": "updated"
+      },
+      {
+        "timestamp": "2026-02-24T04:48:45.425Z",
+        "feature": "button",
+        "phase": "do",
+        "action": "updated"
+      },
+      {
+        "timestamp": "2026-02-24T04:50:41.201Z",
+        "feature": "input",
+        "phase": "do",
+        "action": "updated"
+      },
+      {
+        "timestamp": "2026-02-24T04:51:55.042Z",
+        "feature": "toggle",
+        "phase": "do",
+        "action": "updated"
+      },
+      {
+        "timestamp": "2026-02-24T04:52:32.933Z",
+        "feature": "selectbox",
+        "phase": "do",
+        "action": "updated"
+      },
+      {
+        "timestamp": "2026-02-24T04:53:10.778Z",
+        "feature": "searchbar",
+        "phase": "do",
+        "action": "updated"
+      },
+      {
+        "timestamp": "2026-02-24T04:53:56.390Z",
+        "feature": "pagination",
+        "phase": "do",
+        "action": "updated"
+      }
+    ]
+  }
+}

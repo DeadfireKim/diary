@@ -88,6 +88,7 @@ export const Disabled: Story = {
 
 // 6. All Variants - variant 비교
 export const AllVariants: Story = {
+  args: {},
   render: () => (
     <div style={{ display: "flex", flexDirection: "column", gap: "16px", minWidth: "400px" }}>
       <Searchbar variant="primary" placeholder="Primary variant" />
@@ -99,6 +100,7 @@ export const AllVariants: Story = {
 
 // 7. All Sizes - size 비교
 export const AllSizes: Story = {
+  args: {},
   render: () => (
     <div style={{ display: "flex", flexDirection: "column", gap: "16px", minWidth: "400px" }}>
       <Searchbar size="small" placeholder="Small size" />
@@ -110,6 +112,7 @@ export const AllSizes: Story = {
 
 // 8. Interactive - 인터랙티브 예제
 export const Interactive: Story = {
+  args: {},
   render: () => {
     const [searchValue, setSearchValue] = useState("");
     const [searchResults, setSearchResults] = useState<string[]>([]);
@@ -167,6 +170,7 @@ export const Interactive: Story = {
 
 // 9. Light Theme - 모든 조합 (Light)
 export const LightTheme: Story = {
+  args: {},
   parameters: {
     backgrounds: { default: "light" },
   },
@@ -258,6 +262,7 @@ export const LightTheme: Story = {
 
 // 10. Dark Theme - 모든 조합 (Dark)
 export const DarkTheme: Story = {
+  args: {},
   parameters: {
     backgrounds: { default: "dark" },
   },
@@ -370,6 +375,7 @@ export const DarkTheme: Story = {
 
 // 11. All Combinations - 18개 모든 조합
 export const AllCombinations: Story = {
+  args: {},
   render: () => {
     const variants = ["primary", "secondary", "tertiary"] as const;
     const sizes = ["small", "medium", "large"] as const;

@@ -125,6 +125,7 @@ export const Disabled: Story = {
 
 // 7. All Variants - variant 비교
 export const AllVariants: Story = {
+  args: { options: [] },
   render: () => (
     <div style={{ display: "flex", flexDirection: "column", gap: "16px", minWidth: "300px" }}>
       <Selectbox
@@ -148,6 +149,7 @@ export const AllVariants: Story = {
 
 // 8. All Sizes - size 비교
 export const AllSizes: Story = {
+  args: { options: [] },
   render: () => (
     <div style={{ display: "flex", flexDirection: "column", gap: "16px", minWidth: "300px" }}>
       <Selectbox
@@ -171,6 +173,7 @@ export const AllSizes: Story = {
 
 // 9. Controlled - Controlled 모드
 export const Controlled: Story = {
+  args: { options: [] },
   render: () => {
     const [value, setValue] = useState("");
     return (
@@ -202,6 +205,7 @@ export const Controlled: Story = {
 
 // 10. Light Theme - 모든 조합 (Light)
 export const LightTheme: Story = {
+  args: { options: [] },
   parameters: {
     backgrounds: { default: "light" },
   },
@@ -302,6 +306,7 @@ export const LightTheme: Story = {
 
 // 11. Dark Theme - 모든 조합 (Dark)
 export const DarkTheme: Story = {
+  args: { options: [] },
   parameters: {
     backgrounds: { default: "dark" },
   },
@@ -423,6 +428,7 @@ export const DarkTheme: Story = {
 
 // 12. All Combinations - 18개 모든 조합
 export const AllCombinations: Story = {
+  args: { options: [] },
   render: () => {
     const variants = ["primary", "secondary", "tertiary"] as const;
     const sizes = ["small", "medium", "large"] as const;
