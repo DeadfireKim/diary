@@ -26,7 +26,8 @@ export default function Layout({ children }: LayoutProps) {
         <Image
           src="/images/banner.png"
           alt="Banner"
-          fill
+          width={1168}
+          height={240}
           className={styles.bannerImage}
           priority
         />
