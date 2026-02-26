@@ -2,6 +2,7 @@
 
 import { ReactNode } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { routes } from "@/commons/constants/url";
 import styles from "./styles.module.css";
@@ -22,7 +23,13 @@ export default function Layout({ children }: LayoutProps) {
       <div className={styles.gap} data-testid="layout-gap-1" />
 
       <div className={styles.banner} data-testid="layout-banner">
-        {/* Banner content */}
+        <Image
+          src="/images/banner.png"
+          alt="Banner"
+          fill
+          className={styles.bannerImage}
+          priority
+        />
       </div>
 
       <div className={styles.gap} data-testid="layout-gap-2" />
@@ -52,7 +59,10 @@ export default function Layout({ children }: LayoutProps) {
 
       <footer className={styles.footer} data-testid="layout-footer">
         <div className={styles.footerContent}>
-          © 2024 Diary. All rights reserved.
+          <div className={styles.footerTitle}>민지의 다이러리</div>
+          <div className={styles.footerCopyright}>
+            © 2024 Diary. All rights reserved.
+          </div>
         </div>
       </footer>
     </div>

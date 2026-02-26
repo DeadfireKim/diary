@@ -32,11 +32,17 @@
 .banner {
   width: 1168px;
   height: 240px;
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   background: var(--gradient-primary);
   border-radius: 12px;
+  overflow: hidden;
+}
+
+.bannerImage {
+  object-fit: cover;
 }
 
 /* Navigation (3-1288) */
@@ -87,12 +93,23 @@
   height: 160px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  padding: 0 24px;
   background-color: var(--color-gray-05);
 }
 
 .footerContent {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.footerTitle {
+  font: var(--text-title-1);
+  color: var(--color-gray-black);
+}
+
+.footerCopyright {
   font: var(--text-body-2s);
   color: var(--color-gray-60);
-  text-align: center;
 }
