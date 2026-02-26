@@ -76,6 +76,7 @@
 
 .navLink.active {
   font-weight: 800;
+  text-decoration: underline;
 }
 
 /* Main content */
