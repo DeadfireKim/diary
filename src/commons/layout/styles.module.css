@@ -6,50 +6,93 @@
   min-height: 100vh;
 }
 
+/* Header (3-1275) */
 .header {
   width: 1168px;
   height: 60px;
   display: flex;
   align-items: center;
-  justify-content: center;
-  background-color: #f0f0f0;
+  justify-content: flex-start;
+  padding: 0 24px;
 }
 
+.logo {
+  font: var(--text-heading-2);
+  color: var(--color-gray-black);
+  font-weight: 700;
+}
+
+/* Gap */
 .gap {
   width: 1168px;
   height: 24px;
 }
 
+/* Banner (3-1283) */
 .banner {
   width: 1168px;
   height: 240px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #e0e0e0;
+  background: var(--gradient-primary);
+  border-radius: 12px;
 }
 
+/* Navigation (3-1288) */
 .navigation {
   width: 1168px;
   height: 48px;
   display: flex;
   align-items: center;
-  justify-content: center;
-  background-color: #d0d0d0;
+  justify-content: flex-start;
+  gap: 40px;
+  padding: 0 24px;
 }
 
+.navLink {
+  font: var(--text-heading-1);
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.navLink:hover {
+  opacity: 0.7;
+}
+
+.diariesLink {
+  color: var(--color-gray-black);
+}
+
+.picturesLink {
+  color: var(--color-gray-60);
+}
+
+.navLink.active {
+  font-weight: 800;
+}
+
+/* Main content */
 .main {
   width: 1168px;
   flex: 1;
   display: flex;
   flex-direction: column;
+  padding: 24px;
 }
 
+/* Footer (55-2162) */
 .footer {
   width: 1168px;
   height: 160px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #c0c0c0;
+  background-color: var(--color-gray-05);
+}
+
+.footerContent {
+  font: var(--text-body-2s);
+  color: var(--color-gray-60);
+  text-align: center;
 }
