@@ -1,0 +1,47 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 1168px;
+}
+
+/* Gap: 1168 * 32 */
+.gap32 {
+  width: 1168px;
+  height: 32px;
+}
+
+/* Search section: 1168 * 48 */
+.search {
+  width: 1168px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+}
+
+/* Gap: 1168 * 42 */
+.gap42 {
+  width: 1168px;
+  height: 42px;
+}
+
+/* Main section: 1168 * 936 */
+.main {
+  width: 1168px;
+  height: 936px;
+  display: flex;
+}
+
+/* Gap: 1168 * 40 */
+.gap40 {
+  width: 1168px;
+  height: 40px;
+}
+
+/* Pagination section: 1168 * 32 */
+.pagination {
+  width: 1168px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
