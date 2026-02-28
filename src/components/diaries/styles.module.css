@@ -16,6 +16,20 @@
   height: 48px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.filterSelect {
+  width: 160px;
+}
+
+.searchbar {
+  flex: 1;
+}
+
+.writeButton {
+  width: 120px;
 }
 
 /* Gap: 1168 * 42 */

@@ -4,14 +4,14 @@
 ==============================================
 
 조건-커서룰) 아래의 커서룰을 적용하여 작업하고, 이 작업이 끝나면 해당 rules 적용 결과를 체크리스트로 반환할 것.
-            - @01-common.mdc
-            - @02-wireframe.mdc
-            - @03-ui.mdc
+            - @01-common.md
+            - @02-wireframe.md
+            - @03-ui.md
 
 ==============================================
 
-조건-피그마) 활용할MCP: CursorTalkToFigmaMCP(채널명: rloe8q5m)
-조건-피그마) 구현될 컴포넌트 노드ID(search 영역): 3:1559
+조건-피그마) 피그마 토큰으로 연결되어있으니 피그마를 활용해줘
+조건-피그마) 구현될 컴포넌트 노드ID(search 영역): 3-1293
 
 조건-파일경로) 구현될 TSX 파일경로: src/components/diaries/index.tsx
 조건-파일경로) 구현될 CSS 파일경로: src/components/diaries/styles.module.css
