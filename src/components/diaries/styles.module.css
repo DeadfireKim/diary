@@ -1,18 +1,18 @@
 .container {
   display: flex;
   flex-direction: column;
-  width: 1168px;
+  width: 100%;
 }
 
-/* Gap: 1168 * 32 */
+/* Gap: 1120 * 32 */
 .gap32 {
-  width: 1168px;
+  width: 100%;
   height: 32px;
 }
 
-/* Search section: 1168 * 48 */
+/* Search section: 1120 * 48 */
 .search {
-  width: 1168px;
+  width: 100%;
   height: 48px;
   display: flex;
   align-items: center;
@@ -34,28 +34,28 @@
   flex-shrink: 0;
 }
 
-/* Gap: 1168 * 42 */
+/* Gap: 1120 * 42 */
 .gap42 {
-  width: 1168px;
+  width: 100%;
   height: 42px;
 }
 
-/* Main section: 1168 * 936 */
+/* Main section: 1120 * 936 */
 .main {
-  width: 1168px;
+  width: 100%;
   height: 936px;
   display: flex;
 }
 
-/* Gap: 1168 * 40 */
+/* Gap: 1120 * 40 */
 .gap40 {
-  width: 1168px;
+  width: 100%;
   height: 40px;
 }
 
-/* Pagination section: 1168 * 32 */
+/* Pagination section: 1120 * 32 */
 .pagination {
-  width: 1168px;
+  width: 100%;
   height: 32px;
   display: flex;
   align-items: center;
