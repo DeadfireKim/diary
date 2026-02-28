@@ -16,20 +16,22 @@
   height: 48px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
   gap: 12px;
 }
 
 .filterSelect {
-  width: 160px;
+  width: 200px;
+  flex-shrink: 0;
 }
 
 .searchbar {
   flex: 1;
+  min-width: 0;
 }
 
 .writeButton {
-  width: 120px;
+  width: 140px;
+  flex-shrink: 0;
 }
 
 /* Gap: 1168 * 42 */
