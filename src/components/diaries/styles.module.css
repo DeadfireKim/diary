@@ -33,6 +33,16 @@
   width: 140px;
   flex-shrink: 0;
   margin-left: auto;
+  background-color: var(--color-gray-black);
+  color: var(--color-gray-white);
+}
+
+.writeButton:hover {
+  background-color: var(--color-gray-90);
+}
+
+.writeButton:active {
+  background-color: var(--color-gray-80);
 }
 
 /* Gap: 1120 * 42 */
