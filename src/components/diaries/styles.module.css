@@ -32,6 +32,7 @@
 .writeButton {
   width: 140px;
   flex-shrink: 0;
+  margin-left: auto;
 }
 
 /* Gap: 1120 * 42 */
