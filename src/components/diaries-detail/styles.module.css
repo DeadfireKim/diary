@@ -93,7 +93,6 @@
   align-items: center;
   gap: 4px;
   align-self: flex-end;
-  transition: opacity 0.2s;
 }
 
 .copyButton:hover {
