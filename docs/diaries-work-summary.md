@@ -56,6 +56,38 @@ Diary 프로젝트의 일기 목록 페이지 (/diaries) 컴포넌트 구현 완
 - hover/active 상태 추가
 - Figma 디자인 반영
 
+### 7. Main 영역 일기 카드 UI 구현
+**커밋**: d0d1650 - `feat: Diaries Main 영역 일기 카드 UI 구현`
+
+- Mock 데이터 6개 생성 (EmotionType enum 활용)
+- 카드 구조: 이미지 + 콘텐츠(날짜, 내용, 감정)
+- Flexbox grid 레이아웃 (wrap, gap: 24px)
+- border-radius: 16px 통일
+- 감정 이미지: emotion enum의 imageMedium 사용
+
+### 8. 카드 레이아웃 4열 균등 배치
+**커밋**: d2f6095 - `fix: 일기카드 레이아웃 조정 (4열 균등 배치)`
+
+- 카드 width: 248px → 274px
+- 카드 이미지: 248x148 → 274x164
+- justify-content: space-between (양쪽 끝 정렬)
+- 4장 배치 (274 × 4 = 1096px, 간격 8px × 3)
+
+### 9. 감정별 색상 반영
+**커밋**: 6dcb0ad - `fix: 감정별 색상을 일기카드에 반영`
+
+- emotionMeta.color를 인라인 스타일로 적용
+- Happy: 빨간색, Sad: 파란색, Angry: 회색
+- Surprise: 노란색, Etc: 녹색
+- emotion enum의 color 속성 활용
+
+### 10. 카드 헤더 레이아웃 수정
+**커밋**: ed514e8 - `fix: 카드 헤더 레이아웃 수정 (감정텍스트 + 날짜 한 줄)`
+
+- 감정텍스트와 날짜를 같은 줄에 배치
+- cardHeader 추가 (flex, space-between)
+- 레이아웃: [감정텍스트 | 날짜] → 내용
+
 ---
 
 ## 🎨 구현된 UI 구조
