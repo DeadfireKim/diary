@@ -57,13 +57,14 @@
   min-height: 936px;
   display: flex;
   flex-wrap: wrap;
-  gap: 24px;
+  justify-content: space-between;
+  row-gap: 24px;
   align-content: flex-start;
 }
 
 /* Diary Card */
 .diaryCard {
-  width: 248px;
+  width: 274px;
   display: flex;
   flex-direction: column;
   background-color: var(--color-gray-white);
@@ -78,8 +79,8 @@
 }
 
 .cardImage {
-  width: 248px;
-  height: 148px;
+  width: 274px;
+  height: 164px;
   overflow: hidden;
   flex-shrink: 0;
 }

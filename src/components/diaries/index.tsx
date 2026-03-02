@@ -115,8 +115,8 @@ export default function Diaries() {
                 <Image
                   src={emotionMeta.imageMedium}
                   alt={emotionMeta.label}
-                  width={248}
-                  height={148}
+                  width={274}
+                  height={164}
                   className={styles.emotionImage}
                 />
               </div>
