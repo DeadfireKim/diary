@@ -1,7 +1,9 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import Button from "@/commons/components/button";
+import Input from "@/commons/components/input";
 import { EmotionType, getEmotionMeta } from "@/commons/constants/enum";
 import styles from "./styles.module.css";
 
@@ -14,7 +16,27 @@ type DiaryDetail = {
   createdAt: string;
 };
 
+type Retrospect = {
+  id: number;
+  content: string;
+  createdAt: string;
+};
+
 export default function DiariesDetail() {
+  const [retrospectInput, setRetrospectInput] = useState("");
+  const [retrospects, setRetrospects] = useState<Retrospect[]>([
+    {
+      id: 1,
+      content: "이 일기를 보니 그때의 기분이 생생하게 떠오르네요.",
+      createdAt: "2024.01.16",
+    },
+    {
+      id: 2,
+      content: "정말 좋은 추억이었어요.",
+      createdAt: "2024.01.17",
+    },
+  ]);
+
   // Mock 데이터
   const mockDiary: DiaryDetail = {
     id: 1,
@@ -37,6 +59,22 @@ export default function DiariesDetail() {
 
   const handleDelete = () => {
     console.log("Delete clicked");
+  };
+
+  const handleAddRetrospect = () => {
+    if (retrospectInput.trim()) {
+      const newRetrospect: Retrospect = {
+        id: retrospects.length + 1,
+        content: retrospectInput,
+        createdAt: new Date().toLocaleDateString("ko-KR", {
+          year: "numeric",
+          month: "2-digit",
+          day: "2-digit",
+        }).replace(/\. /g, ".").replace(/\.$/, ""),
+      };
+      setRetrospects([...retrospects, newRetrospect]);
+      setRetrospectInput("");
+    }
   };
 
   return (
@@ -119,13 +157,39 @@ export default function DiariesDetail() {
       <div className={styles.gap24} />
 
       {/* Retrospect Input section: 1168 * 85 */}
-      <div className={styles.retrospectInput}>Retrospect Input Area</div>
+      <div className={styles.retrospectInput}>
+        <Input
+          variant="primary"
+          size="medium"
+          theme="light"
+          value={retrospectInput}
+          onChange={(e) => setRetrospectInput(e.target.value)}
+          placeholder="회고를 입력하세요"
+          className={styles.retrospectInputField}
+        />
+        <Button
+          variant="primary"
+          size="medium"
+          theme="light"
+          onClick={handleAddRetrospect}
+          className={styles.retrospectButton}
+        >
+          입력
+        </Button>
+      </div>
 
       {/* Gap: 1168 * 16 */}
       <div className={styles.gap16} />
 
       {/* Retrospect List section: 1168 * 72 */}
-      <div className={styles.retrospectList}>Retrospect List Area</div>
+      <div className={styles.retrospectList}>
+        {retrospects.map((retrospect) => (
+          <div key={retrospect.id} className={styles.retrospectItem}>
+            <p className={styles.retrospectText}>{retrospect.content}</p>
+            <span className={styles.retrospectDate}>{retrospect.createdAt}</span>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
