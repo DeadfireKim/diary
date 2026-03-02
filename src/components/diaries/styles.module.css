@@ -116,8 +116,8 @@
 
 .cardEmotion {
   font: var(--text-caption-1);
-  color: var(--color-gray-80);
   font-weight: 600;
+  /* color는 인라인 스타일로 emotion별로 동적 적용 */
 }
 
 /* Gap: 1120 * 40 */

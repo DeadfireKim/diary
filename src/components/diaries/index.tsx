@@ -123,7 +123,12 @@ export default function Diaries() {
               <div className={styles.cardContent}>
                 <div className={styles.cardDate}>{diary.date}</div>
                 <div className={styles.cardText}>{diary.content}</div>
-                <div className={styles.cardEmotion}>{emotionMeta.label}</div>
+                <div
+                  className={styles.cardEmotion}
+                  style={{ color: emotionMeta.color }}
+                >
+                  {emotionMeta.label}
+                </div>
               </div>
             </div>
           );
