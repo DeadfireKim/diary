@@ -1,0 +1,68 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* Gap: 1168 * 64 */
+.gap64 {
+  width: 100%;
+  height: 64px;
+}
+
+/* Detail Title section: 1168 * 84 */
+.detailTitle {
+  width: 100%;
+  height: 84px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Gap: 1168 * 24 */
+.gap24 {
+  width: 100%;
+  height: 24px;
+}
+
+/* Detail Content section: 1168 * 169 */
+.detailContent {
+  width: 100%;
+  height: 169px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Detail Footer section: 1168 * 56 */
+.detailFooter {
+  width: 100%;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Retrospect Input section: 1168 * 85 */
+.retrospectInput {
+  width: 100%;
+  height: 85px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Gap: 1168 * 16 */
+.gap16 {
+  width: 100%;
+  height: 16px;
+}
+
+/* Retrospect List section: 1168 * 72 */
+.retrospectList {
+  width: 100%;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
