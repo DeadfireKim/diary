@@ -189,7 +189,7 @@ export default function DiariesDetail() {
         {retrospects.map((retrospect) => (
           <div key={retrospect.id} className={styles.retrospectItem}>
             <p className={styles.retrospectText}>{retrospect.content}</p>
-            <span className={styles.retrospectDate}>{retrospect.createdAt}</span>
+            <span className={styles.retrospectDate}>[{retrospect.createdAt}]</span>
           </div>
         ))}
       </div>
