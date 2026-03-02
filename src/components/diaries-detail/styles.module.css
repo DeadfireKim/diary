@@ -95,12 +95,17 @@
   padding: 4px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  gap: 4px;
   transition: opacity 0.2s;
 }
 
 .copyButton:hover {
   opacity: 0.7;
+}
+
+.copyButtonText {
+  font: var(--text-caption-1);
+  color: var(--color-gray-black);
 }
 
 /* Detail Footer section: 1168 * 56 */
