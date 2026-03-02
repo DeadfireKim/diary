@@ -86,7 +86,7 @@ export default function DiariesDetail() {
             width={24}
             height={24}
           />
-          <span className={styles.copyButtonText}>선택복사</span>
+          <span className={styles.copyButtonText}>내용복사</span>
         </button>
       </div>
 
