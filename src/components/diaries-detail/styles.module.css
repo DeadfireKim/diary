@@ -121,6 +121,13 @@
   width: 80px;
 }
 
+/* Retrospect Title */
+.retrospectTitle {
+  font: var(--text-heading-2);
+  color: var(--color-gray-black);
+  margin: 0 0 16px 0;
+}
+
 /* Retrospect Input section: 1168 * 85 */
 .retrospectInput {
   width: 100%;

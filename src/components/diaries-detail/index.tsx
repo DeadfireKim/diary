@@ -156,6 +156,9 @@ export default function DiariesDetail() {
       {/* Gap: 1168 * 24 */}
       <div className={styles.gap24} />
 
+      {/* Retrospect Title */}
+      <h2 className={styles.retrospectTitle}>회고</h2>
+
       {/* Retrospect Input section: 1168 * 85 */}
       <div className={styles.retrospectInput}>
         <Input
