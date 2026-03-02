@@ -11,9 +11,9 @@
 ==============================================
 
 조건-피그마) 피그마 API방식 사용
-조건-피그마) 구현될 컴포넌트 노드ID(라이트모드: detail-title 영역): 3:1073
-조건-피그마) 구현될 컴포넌트 노드ID(라이트모드: detail-content 영역): 3:1083
-조건-피그마) 구현될 컴포넌트 노드ID(라이트모드: detail-footer 영역): 3:1092
+조건-피그마) 구현될 컴포넌트 노드ID(라이트모드: detail-title 영역): 3-1073
+조건-피그마) 구현될 컴포넌트 노드ID(라이트모드: detail-content 영역): 3-1083
+조건-피그마) 구현될 컴포넌트 노드ID(라이트모드: detail-footer 영역): 3-1092
 
 조건-파일경로) 구현될 TSX 파일경로: src/components/diaries-detail/index.tsx
 조건-파일경로) 구현될 CSS 파일경로: src/components/diaries-detail/styles.module.css
@@ -31,7 +31,7 @@
 
 ==============================================
 
-기존히스토리-참고만) MCP를 연동하여 피그마의 디자인을 이미 만들어져있는 와이어프레임의 detail-title, detail-content, deatil-footer 영역에 그대로 구현할 것.
+기존히스토리-참고만) 피그마의 디자인을 이미 만들어져있는 와이어프레임의 detail-title, detail-content, deatil-footer 영역에 그대로 구현할 것.
 
 ==============================================
 
