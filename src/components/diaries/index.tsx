@@ -5,6 +5,7 @@ import Image from "next/image";
 import SelectBox from "@/commons/components/selectbox";
 import Searchbar from "@/commons/components/searchbar";
 import Button from "@/commons/components/button";
+import Pagination from "@/commons/components/pagination";
 import { EmotionType, getEmotionMeta } from "@/commons/constants/enum";
 import styles from "./styles.module.css";
 
@@ -19,6 +20,8 @@ type DiaryCard = {
 export default function Diaries() {
   const [filterValue, setFilterValue] = useState("");
   const [searchValue, setSearchValue] = useState("");
+  const [currentPage, setCurrentPage] = useState(1);
+  const totalPages = 10; // Mock total pages
 
   const filterOptions = [
     { value: "all", label: "전체" },
@@ -141,7 +144,18 @@ export default function Diaries() {
       <div className={styles.gap40} />
 
       {/* Pagination section: 1168 * 32 */}
-      <div className={styles.pagination}>Pagination Area</div>
+      <div className={styles.paginationWrapper}>
+        <Pagination
+          variant="primary"
+          size="medium"
+          theme="light"
+          currentPage={currentPage}
+          totalPages={totalPages}
+          onPageChange={setCurrentPage}
+          siblingCount={1}
+          showFirstLast={true}
+        />
+      </div>
 
       {/* Gap: 1168 * 40 */}
       <div className={styles.gap40} />

@@ -133,7 +133,7 @@
 }
 
 /* Pagination section: 1120 * 32 */
-.pagination {
+.paginationWrapper {
   width: 100%;
   height: 32px;
   display: flex;
