@@ -161,5 +161,6 @@
 
 .closeButton,
 .submitButton {
-  width: 100px;
+  width: 120px;
+  white-space: nowrap;
 }
