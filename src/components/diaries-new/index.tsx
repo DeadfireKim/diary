@@ -60,6 +60,7 @@ export default function DiariesNew() {
 
       {/* Input Title: full * 76 */}
       <div className={styles.inputTitle}>
+        <label className={styles.inputLabel}>제목</label>
         <Input
           variant="primary"
           size="medium"
@@ -76,6 +77,7 @@ export default function DiariesNew() {
 
       {/* Input Content: full * 156 */}
       <div className={styles.inputContent}>
+        <label className={styles.inputLabel}>내용</label>
         <textarea
           className={styles.contentTextarea}
           value={content}

@@ -102,6 +102,13 @@
   width: 100%;
   display: flex;
   flex-direction: column;
+  gap: 8px;
+}
+
+.inputLabel {
+  font: var(--text-body-2);
+  font-weight: 600;
+  color: var(--color-gray-black);
 }
 
 .titleInput {
@@ -117,8 +124,9 @@
 /* Input Content: full * 156 */
 .inputContent {
   width: 100%;
-  height: 156px;
   display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .contentTextarea {
