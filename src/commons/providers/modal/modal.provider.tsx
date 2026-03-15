@@ -107,19 +107,36 @@ function ModalPortal({ isOpen, onClose, children }: ModalPortalProps) {
 
   return createPortal(
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center"
       role="dialog"
       aria-modal="true"
+      style={{
+        position: "fixed",
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        zIndex: 9999,
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+      }}
     >
       {/* 오버레이 (배경) */}
       <div
-        className="fixed inset-0 bg-black/50 transition-opacity"
         onClick={onClose}
         aria-hidden="true"
+        style={{
+          position: "fixed",
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          backgroundColor: "rgba(0, 0, 0, 0.5)",
+        }}
       />
 
-      {/* 모달 컨텐츠 래퍼 (max-w-md, w-full 제거됨) */}
-      <div className="relative z-10 transition-transform">
+      {/* 모달 컨텐츠 래퍼 */}
+      <div style={{ position: "relative", zIndex: 10 }}>
         {children}
       </div>
     </div>,
