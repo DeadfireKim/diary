@@ -67,6 +67,42 @@ export default function Diaries() {
       content: "새로운 취미를 시작했어요. 앞으로가 기대되고 설레는 마음이 들어요.",
       emotion: EmotionType.Happy,
     },
+    {
+      id: 7,
+      date: "2024.01.09",
+      content: "오랜만에 가족들과 시간을 보냈어요. 웃음이 끊이지 않는 즐거운 시간이었어요.",
+      emotion: EmotionType.Happy,
+    },
+    {
+      id: 8,
+      date: "2024.01.08",
+      content: "혼자 있는 시간이 너무 길어서 외로움을 느꼈어요. 누군가와 이야기하고 싶었어요.",
+      emotion: EmotionType.Sad,
+    },
+    {
+      id: 9,
+      date: "2024.01.07",
+      content: "약속 시간에 늦어서 화가 났어요. 다음부터는 미리미리 준비해야겠어요.",
+      emotion: EmotionType.Angry,
+    },
+    {
+      id: 10,
+      date: "2024.01.06",
+      content: "우연히 오랜 친구를 만났어요! 정말 뜻밖의 만남이라 너무 반가웠어요.",
+      emotion: EmotionType.Surprise,
+    },
+    {
+      id: 11,
+      date: "2024.01.05",
+      content: "조용히 책을 읽으며 여유로운 시간을 보냈어요. 평화로운 하루였어요.",
+      emotion: EmotionType.Etc,
+    },
+    {
+      id: 12,
+      date: "2024.01.04",
+      content: "목표했던 일을 드디어 완성했어요! 성취감이 느껴지는 뿌듯한 하루였어요.",
+      emotion: EmotionType.Happy,
+    },
   ];
 
   return (
