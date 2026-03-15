@@ -16,6 +16,11 @@
   padding: 0 24px;
 }
 
+.logoLink {
+  text-decoration: none;
+  cursor: pointer;
+}
+
 .logo {
   font: var(--text-heading-2);
   color: var(--color-gray-black);
@@ -60,6 +65,7 @@
   font: var(--text-heading-1);
   text-decoration: none;
   transition: opacity 0.2s;
+  cursor: pointer;
 }
 
 .navLink:hover {

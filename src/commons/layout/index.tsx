@@ -3,8 +3,8 @@
 import { ReactNode } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
 import { routes } from "@/commons/constants/url";
+import { useLinkRouting } from "./hooks/index.link.routing.hook";
 import styles from "./styles.module.css";
 
 type LayoutProps = {
@@ -12,12 +12,16 @@ type LayoutProps = {
 };
 
 export default function Layout({ children }: LayoutProps) {
-  const pathname = usePathname();
+  const { pathname } = useLinkRouting();
 
   return (
     <div className={styles.container}>
       <header className={styles.header} data-testid="layout-header">
-        <div className={styles.logo}>Diary</div>
+        <Link href={routes.diaries.path} className={styles.logoLink}>
+          <div className={styles.logo} data-testid="header-logo">
+            Diary
+          </div>
+        </Link>
       </header>
 
       <div className={styles.gap} data-testid="layout-gap-1" />
@@ -41,6 +45,7 @@ export default function Layout({ children }: LayoutProps) {
           className={`${styles.navLink} ${styles.diariesLink} ${
             pathname === routes.diaries.path ? styles.active : ""
           }`}
+          data-testid="nav-link-diaries"
         >
           일기보관함
         </Link>
@@ -49,6 +54,7 @@ export default function Layout({ children }: LayoutProps) {
           className={`${styles.navLink} ${styles.picturesLink} ${
             pathname === routes.pictures.path ? styles.active : ""
           }`}
+          data-testid="nav-link-pictures"
         >
           사진보관함
         </Link>
