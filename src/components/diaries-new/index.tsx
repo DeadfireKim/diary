@@ -20,7 +20,7 @@ export default function DiariesNew() {
   };
 
   return (
-    <div className={styles.wrapper}>
+    <div className={styles.wrapper} data-testid="diaries-new-wrapper">
       {/* Header: full * 24 */}
       <div className={styles.header}>
         <h1 className={styles.headerTitle}>일기쓰기</h1>

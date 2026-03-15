@@ -7,6 +7,7 @@ import Searchbar from "@/commons/components/searchbar";
 import Button from "@/commons/components/button";
 import Pagination from "@/commons/components/pagination";
 import { EmotionType, getEmotionMeta } from "@/commons/constants/enum";
+import { useDiaryModal } from "./hooks/index.link.modal.hook";
 import styles from "./styles.module.css";
 
 // Mock 데이터 타입
@@ -22,6 +23,7 @@ export default function Diaries() {
   const [searchValue, setSearchValue] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const totalPages = 10; // Mock total pages
+  const { openDiaryModal } = useDiaryModal();
 
   const filterOptions = [
     { value: "all", label: "전체" },
@@ -106,7 +108,7 @@ export default function Diaries() {
   ];
 
   return (
-    <div className={styles.container}>
+    <div className={styles.container} data-testid="diaries-container">
       {/* Gap: 1168 * 32 */}
       <div className={styles.gap32} />
 
@@ -136,6 +138,8 @@ export default function Diaries() {
           size="medium"
           theme="light"
           className={styles.writeButton}
+          onClick={openDiaryModal}
+          data-testid="write-button"
         >
           일기쓰기
         </Button>
