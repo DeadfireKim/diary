@@ -120,11 +120,7 @@
    variant에 따라 색상만 변경)
    ======================================== */
 
-/* info variant: 검정색 버튼 (기본 primary 스타일 유지) */
-.variant-info .confirmButtonSingle,
-.variant-info .confirmButtonDual {
-  /* Button 컴포넌트의 primary 스타일 사용 */
-}
+/* info variant는 Button 컴포넌트의 기본 primary 스타일 사용 */
 
 /* danger variant: 빨간색 버튼 */
 .variant-danger .confirmButtonSingle,
