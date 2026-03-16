@@ -1,6 +1,6 @@
 {
   "version": "2.0",
-  "lastUpdated": "2026-03-15T08:11:26.803Z",
+  "lastUpdated": "2026-03-16T11:59:05.357Z",
   "activeFeatures": [
     "constants",
     "modal",
@@ -48,9 +48,9 @@
       "documents": {},
       "timestamps": {
         "started": "2026-02-21T03:02:38.120Z",
-        "lastUpdated": "2026-03-15T08:11:24.590Z"
+        "lastUpdated": "2026-03-16T11:59:05.357Z"
       },
-      "lastFile": "/Users/tj/src/diary/src/commons/providers/modal/modal.provider.tsx"
+      "lastFile": "/Users/tj/src/diary/src/commons/components/modal/index.tsx"
     },
     "diary": {
       "phase": "do",
@@ -308,7 +308,7 @@
   "session": {
     "startedAt": "2026-02-20T05:42:45.211Z",
     "onboardingCompleted": false,
-    "lastActivity": "2026-03-15T08:11:26.803Z"
+    "lastActivity": "2026-03-16T11:59:05.357Z"
   },
   "history": [
     {
@@ -1190,6 +1190,12 @@
     {
       "timestamp": "2026-03-15T08:11:26.803Z",
       "feature": "diaries",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-16T11:59:05.357Z",
+      "feature": "modal",
       "phase": "do",
       "action": "updated"
     }
