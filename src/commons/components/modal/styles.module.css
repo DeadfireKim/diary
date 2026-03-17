@@ -107,10 +107,10 @@
 
 /* dual 확인 버튼 - fixed width */
 .confirmButtonDual {
-  width: 104px;
+  width: 120px;
 }
 
 /* dual 취소 버튼 - fixed width */
 .cancelButton {
-  width: 104px;
+  width: 120px;
 }
