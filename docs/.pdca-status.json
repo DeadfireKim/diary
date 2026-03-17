@@ -1,6 +1,6 @@
 {
   "version": "2.0",
-  "lastUpdated": "2026-03-17T10:36:11.966Z",
+  "lastUpdated": "2026-03-17T11:29:40.219Z",
   "activeFeatures": [
     "constants",
     "modal",
@@ -48,9 +48,9 @@
       "documents": {},
       "timestamps": {
         "started": "2026-02-21T03:02:38.120Z",
-        "lastUpdated": "2026-03-17T10:35:49.763Z"
+        "lastUpdated": "2026-03-17T11:29:40.219Z"
       },
-      "lastFile": "/Users/tj/src/diary/src/commons/components/modal/index.tsx"
+      "lastFile": "/Users/tj/src/diary/src/commons/providers/modal/modal.provider.tsx"
     },
     "diary": {
       "phase": "do",
@@ -308,7 +308,7 @@
   "session": {
     "startedAt": "2026-02-20T05:42:45.211Z",
     "onboardingCompleted": false,
-    "lastActivity": "2026-03-17T10:36:11.966Z"
+    "lastActivity": "2026-03-17T11:29:40.219Z"
   },
   "history": [
     {
@@ -1262,6 +1262,36 @@
     {
       "timestamp": "2026-03-17T10:36:11.966Z",
       "feature": "button",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-17T11:23:58.850Z",
+      "feature": "modal",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-17T11:24:17.148Z",
+      "feature": "modal",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-17T11:24:21.022Z",
+      "feature": "modal",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-17T11:29:32.820Z",
+      "feature": "modal",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-17T11:29:40.219Z",
+      "feature": "modal",
       "phase": "do",
       "action": "updated"
     }
