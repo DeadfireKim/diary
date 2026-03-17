@@ -2,6 +2,7 @@
 
 import React, { createContext, useContext, useState, useCallback } from "react";
 import { createPortal } from "react-dom";
+import styles from "./styles.module.css";
 
 /**
  * 모달 타입 정의
@@ -156,39 +157,29 @@ function ModalLayer({
   const baseZIndex = 9999;
   const zIndex = baseZIndex + index * 2;
 
+  const backdropClasses = [
+    styles.backdrop,
+    isTopmost ? styles.topmost : styles.notTopmost,
+  ]
+    .filter(Boolean)
+    .join(" ");
+
   return (
     <div
       role="dialog"
       aria-modal="true"
-      style={{
-        position: "fixed",
-        top: 0,
-        left: 0,
-        right: 0,
-        bottom: 0,
-        zIndex,
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-      }}
+      className={styles.modalLayer}
+      style={{ zIndex }}
     >
       {/* 오버레이 (배경) - 각 모달마다 backdrop이 쌓임 */}
       <div
         onClick={isTopmost ? onClose : undefined}
         aria-hidden="true"
-        style={{
-          position: "fixed",
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          backgroundColor: "rgba(0, 0, 0, 0.5)",
-          cursor: isTopmost ? "pointer" : "default",
-        }}
+        className={backdropClasses}
       />
 
       {/* 모달 컨텐츠 래퍼 */}
-      <div style={{ position: "relative", zIndex: zIndex + 1 }}>
+      <div className={styles.contentWrapper} style={{ zIndex: zIndex + 1 }}>
         {children}
       </div>
     </div>

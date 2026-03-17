@@ -1,0 +1,40 @@
+/* ========================================
+   모달 레이어 컨테이너
+   ======================================== */
+.modalLayer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ========================================
+   백드롭 (오버레이)
+   ======================================== */
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.backdrop.topmost {
+  cursor: pointer;
+}
+
+.backdrop.notTopmost {
+  cursor: default;
+}
+
+/* ========================================
+   모달 컨텐츠 래퍼
+   ======================================== */
+.contentWrapper {
+  position: relative;
+}
