@@ -11,7 +11,7 @@ const meta = {
   argTypes: {
     variant: {
       control: "select",
-      options: ["primary", "secondary", "tertiary"],
+      options: ["primary", "secondary", "tertiary", "danger"],
       description: "버튼의 스타일 변형",
     },
     size: {
@@ -64,6 +64,7 @@ export const AllVariants: Story = {
       <Button variant="primary">Primary</Button>
       <Button variant="secondary">Secondary</Button>
       <Button variant="tertiary">Tertiary</Button>
+      <Button variant="danger">Danger</Button>
     </div>
   ),
 };

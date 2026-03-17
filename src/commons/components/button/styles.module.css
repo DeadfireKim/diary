@@ -80,6 +80,20 @@
   background-color: var(--color-blue-10);
 }
 
+/* Light Theme - Danger */
+.variant-danger.theme-light {
+  background-color: var(--color-red-40);
+  color: var(--color-gray-white);
+}
+
+.variant-danger.theme-light:hover:not(:disabled) {
+  background-color: var(--color-red-50);
+}
+
+.variant-danger.theme-light:active:not(:disabled) {
+  background-color: var(--color-red-60);
+}
+
 /* Dark Theme - Primary */
 .variant-primary.theme-dark {
   background-color: var(--color-blue-60);
@@ -121,4 +135,18 @@
 
 .variant-tertiary.theme-dark:active:not(:disabled) {
   background-color: var(--color-gray-70);
+}
+
+/* Dark Theme - Danger */
+.variant-danger.theme-dark {
+  background-color: var(--color-red-50);
+  color: var(--color-gray-white);
+}
+
+.variant-danger.theme-dark:hover:not(:disabled) {
+  background-color: var(--color-red-40);
+}
+
+.variant-danger.theme-dark:active:not(:disabled) {
+  background-color: var(--color-red-30);
 }

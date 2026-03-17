@@ -66,7 +66,7 @@ export default function Modal({
           </Button>
         )}
         <Button
-          variant="primary"
+          variant={variant === "danger" ? "danger" : "primary"}
           theme="light"
           onClick={onConfirm}
           className={

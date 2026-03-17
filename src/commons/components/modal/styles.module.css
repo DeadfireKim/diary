@@ -97,6 +97,7 @@
 
 /* ========================================
    버튼 커스텀 스타일
+   (className을 통해 width만 전달)
    ======================================== */
 
 /* single 확인 버튼 - full width */
@@ -112,28 +113,4 @@
 /* dual 취소 버튼 - fixed width */
 .cancelButton {
   width: 104px;
-}
-
-/* ========================================
-   variant별 버튼 배경색 오버라이드
-   (Button 컴포넌트의 기본 스타일을 유지하되,
-   variant에 따라 색상만 변경)
-   ======================================== */
-
-/* info variant는 Button 컴포넌트의 기본 primary 스타일 사용 */
-
-/* danger variant: 빨간색 버튼 */
-.variant-danger .confirmButtonSingle,
-.variant-danger .confirmButtonDual {
-  background-color: var(--color-red-40);
-}
-
-.variant-danger .confirmButtonSingle:hover:not(:disabled),
-.variant-danger .confirmButtonDual:hover:not(:disabled) {
-  background-color: var(--color-red-50);
-}
-
-.variant-danger .confirmButtonSingle:active:not(:disabled),
-.variant-danger .confirmButtonDual:active:not(:disabled) {
-  background-color: var(--color-red-60);
 }

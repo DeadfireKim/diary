@@ -1,6 +1,6 @@
 {
   "version": "2.0",
-  "lastUpdated": "2026-03-16T12:06:16.355Z",
+  "lastUpdated": "2026-03-17T10:36:11.966Z",
   "activeFeatures": [
     "constants",
     "modal",
@@ -48,9 +48,9 @@
       "documents": {},
       "timestamps": {
         "started": "2026-02-21T03:02:38.120Z",
-        "lastUpdated": "2026-03-16T12:06:16.355Z"
+        "lastUpdated": "2026-03-17T10:35:49.763Z"
       },
-      "lastFile": "/Users/tj/src/diary/src/commons/components/modal/index.stories.tsx"
+      "lastFile": "/Users/tj/src/diary/src/commons/components/modal/index.tsx"
     },
     "diary": {
       "phase": "do",
@@ -100,7 +100,7 @@
       "documents": {},
       "timestamps": {
         "started": "2026-02-22T08:27:34.787Z",
-        "lastUpdated": "2026-02-25T14:28:49.161Z"
+        "lastUpdated": "2026-03-17T10:36:11.966Z"
       },
       "lastFile": "/Users/tj/src/diary/src/commons/components/button/button.stories.tsx"
     },
@@ -308,7 +308,7 @@
   "session": {
     "startedAt": "2026-02-20T05:42:45.211Z",
     "onboardingCompleted": false,
-    "lastActivity": "2026-03-16T12:06:16.355Z"
+    "lastActivity": "2026-03-17T10:36:11.966Z"
   },
   "history": [
     {
@@ -1238,6 +1238,30 @@
     {
       "timestamp": "2026-03-16T12:06:16.355Z",
       "feature": "modal",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-17T10:35:12.872Z",
+      "feature": "button",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-17T10:35:49.763Z",
+      "feature": "modal",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-17T10:36:05.148Z",
+      "feature": "button",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-17T10:36:11.966Z",
+      "feature": "button",
       "phase": "do",
       "action": "updated"
     }

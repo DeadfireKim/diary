@@ -1,7 +1,7 @@
 import { ButtonHTMLAttributes, ReactNode } from "react";
 import styles from "./styles.module.css";
 
-type ButtonVariant = "primary" | "secondary" | "tertiary";
+type ButtonVariant = "primary" | "secondary" | "tertiary" | "danger";
 type ButtonSize = "small" | "medium" | "large";
 type ButtonTheme = "light" | "dark";
 
