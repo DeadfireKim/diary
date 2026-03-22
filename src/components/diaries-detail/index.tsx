@@ -4,17 +4,9 @@ import { useState } from "react";
 import Image from "next/image";
 import Button from "@/commons/components/button";
 import Input from "@/commons/components/input";
-import { EmotionType, getEmotionMeta } from "@/commons/constants/enum";
+import { getEmotionMeta } from "@/commons/constants/enum";
+import { useDiaryBinding } from "./hooks/index.binding.hook";
 import styles from "./styles.module.css";
-
-// Mock 데이터 타입
-type DiaryDetail = {
-  id: number;
-  title: string;
-  content: string;
-  emotion: EmotionType;
-  createdAt: string;
-};
 
 type Retrospect = {
   id: number;
@@ -23,6 +15,7 @@ type Retrospect = {
 };
 
 export default function DiariesDetail() {
+  const { diary, isLoading } = useDiaryBinding();
   const [retrospectInput, setRetrospectInput] = useState("");
   const [retrospects, setRetrospects] = useState<Retrospect[]>([
     {
@@ -37,20 +30,28 @@ export default function DiariesDetail() {
     },
   ]);
 
-  // Mock 데이터
-  const mockDiary: DiaryDetail = {
-    id: 1,
-    title: "오늘의 일기",
-    content:
-      "오늘은 정말 즐거운 하루였어요. 친구들과 함께 맛있는 음식을 먹고 재밌는 이야기를 나눴어요. 날씨도 좋고 기분도 좋았던 하루였습니다.",
-    emotion: EmotionType.Happy,
-    createdAt: "2024.01.15",
-  };
+  if (isLoading) {
+    return (
+      <div className={styles.container} data-testid="diaries-detail-container">
+        <div className={styles.gap64} />
+        <p>로딩 중...</p>
+      </div>
+    );
+  }
 
-  const emotionMeta = getEmotionMeta(mockDiary.emotion);
+  if (!diary) {
+    return (
+      <div className={styles.container} data-testid="diaries-detail-container">
+        <div className={styles.gap64} />
+        <p data-testid="diary-not-found">일기를 찾을 수 없습니다.</p>
+      </div>
+    );
+  }
+
+  const emotionMeta = getEmotionMeta(diary.emotion);
 
   const handleCopyContent = () => {
-    navigator.clipboard.writeText(mockDiary.content);
+    navigator.clipboard.writeText(diary.content);
   };
 
   const handleEdit = () => {
@@ -78,14 +79,14 @@ export default function DiariesDetail() {
   };
 
   return (
-    <div className={styles.container}>
+    <div className={styles.container} data-testid="diaries-detail-container">
       {/* Gap: 1168 * 64 */}
       <div className={styles.gap64} />
 
       {/* Detail Title section: 1168 * 84 */}
       <div className={styles.detailTitle}>
         <div className={styles.titleSection}>
-          <h1 className={styles.title}>{mockDiary.title}</h1>
+          <h1 className={styles.title} data-testid="diary-detail-title">{diary.title}</h1>
           <div className={styles.titleMeta}>
             <div className={styles.emotionInfo}>
               <Image
@@ -94,15 +95,23 @@ export default function DiariesDetail() {
                 width={24}
                 height={24}
                 className={styles.emotionIcon}
+                data-testid="diary-detail-emotion-icon"
               />
               <span
                 className={styles.emotionText}
                 style={{ color: emotionMeta.color }}
+                data-testid="diary-detail-emotion-text"
               >
                 {emotionMeta.label}
               </span>
             </div>
-            <span className={styles.createdAt}>{mockDiary.createdAt}</span>
+            <span className={styles.createdAt} data-testid="diary-detail-created-at">
+              {new Date(diary.createdAt).toLocaleDateString("ko-KR", {
+                year: "numeric",
+                month: "2-digit",
+                day: "2-digit",
+              }).replace(/\. /g, ".").replace(/\.$/, "")}
+            </span>
           </div>
         </div>
       </div>
@@ -112,7 +121,7 @@ export default function DiariesDetail() {
 
       {/* Detail Content section: 1168 * 169 */}
       <div className={styles.detailContent}>
-        <p className={styles.contentText}>{mockDiary.content}</p>
+        <p className={styles.contentText} data-testid="diary-detail-content">{diary.content}</p>
         <button
           className={styles.copyButton}
           onClick={handleCopyContent}
