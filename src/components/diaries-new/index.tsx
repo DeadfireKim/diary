@@ -1,23 +1,17 @@
 "use client";
 
-import { useState } from "react";
 import Input from "@/commons/components/input";
 import Button from "@/commons/components/button";
 import { EmotionType, getEmotionMeta, allEmotions } from "@/commons/constants/enum";
+import { useModalClose } from "./hooks/index.link.modal.close.hook";
+import { useDiaryForm } from "./hooks/index.form.hook";
 import styles from "./styles.module.css";
 
 export default function DiariesNew() {
-  const [selectedEmotion, setSelectedEmotion] = useState<EmotionType | null>(null);
-  const [title, setTitle] = useState("");
-  const [content, setContent] = useState("");
+  const { handleClose } = useModalClose();
+  const { register, handleSubmit, isValid, setValue, watch } = useDiaryForm();
 
-  const handleClose = () => {
-    console.log("Close clicked");
-  };
-
-  const handleSubmit = () => {
-    console.log("Submit:", { selectedEmotion, title, content });
-  };
+  const selectedEmotion = watch("emotion");
 
   return (
     <div className={styles.wrapper} data-testid="diaries-new-wrapper">
@@ -38,10 +32,12 @@ export default function DiariesNew() {
             return (
               <button
                 key={emotion}
+                type="button"
                 className={`${styles.emotionButton} ${
                   selectedEmotion === emotion ? styles.selected : ""
                 }`}
-                onClick={() => setSelectedEmotion(emotion)}
+                onClick={() => setValue("emotion", emotion, { shouldValidate: true })}
+                data-testid={`emotion-button-${emotion}`}
               >
                 <span className={styles.radioCircle}>
                   {selectedEmotion === emotion && (
@@ -65,10 +61,10 @@ export default function DiariesNew() {
           variant="primary"
           size="medium"
           theme="light"
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
+          {...register("title")}
           placeholder="제목을 입력하세요"
           className={styles.titleInput}
+          data-testid="diary-title-input"
         />
       </div>
 
@@ -80,9 +76,9 @@ export default function DiariesNew() {
         <label className={styles.inputLabel}>내용</label>
         <textarea
           className={styles.contentTextarea}
-          value={content}
-          onChange={(e) => setContent(e.target.value)}
+          {...register("content")}
           placeholder="내용을 입력하세요"
+          data-testid="diary-content-textarea"
         />
       </div>
 
@@ -97,6 +93,7 @@ export default function DiariesNew() {
           theme="light"
           onClick={handleClose}
           className={styles.closeButton}
+          data-testid="diaries-new-close-button"
         >
           닫기
         </Button>
@@ -105,7 +102,9 @@ export default function DiariesNew() {
           size="medium"
           theme="light"
           onClick={handleSubmit}
+          disabled={!isValid}
           className={styles.submitButton}
+          data-testid="diaries-new-submit-button"
         >
           등록하기
         </Button>
