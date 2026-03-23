@@ -9,10 +9,12 @@ import Pagination from "@/commons/components/pagination";
 import { getEmotionMeta } from "@/commons/constants/enum";
 import { useDiaryModal } from "./hooks/index.link.modal.hook";
 import { useDiariesBinding } from "./hooks/index.binding.hook";
+import { useDiaryRouting } from "./hooks/index.link.routing.hook";
 import styles from "./styles.module.css";
 
 export default function Diaries() {
   const { diaries, isLoading } = useDiariesBinding();
+  const { navigateToDiaryDetail } = useDiaryRouting();
   const [filterValue, setFilterValue] = useState("");
   const [searchValue, setSearchValue] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
@@ -71,7 +73,12 @@ export default function Diaries() {
         {diaries.map((diary) => {
           const emotionMeta = getEmotionMeta(diary.emotion);
           return (
-            <div key={diary.id} className={styles.diaryCard} data-testid={`diary-card-${diary.id}`}>
+            <div
+              key={diary.id}
+              className={styles.diaryCard}
+              data-testid={`diary-card-${diary.id}`}
+              onClick={() => navigateToDiaryDetail(diary.id)}
+            >
               <div className={styles.cardImage}>
                 <Image
                   src={emotionMeta.imageMedium}
