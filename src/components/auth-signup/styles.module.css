@@ -1,0 +1,99 @@
+.container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-cool-gray-05);
+  padding: 24px;
+}
+
+.card {
+  width: 100%;
+  max-width: 480px;
+  background-color: var(--color-gray-white);
+  border-radius: 24px;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.08);
+  padding: 48px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* 헤더 */
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 4px;
+}
+
+.logoIcon {
+  font-size: 20px;
+  color: var(--color-primary);
+}
+
+.logoText {
+  font: var(--text-title-1);
+  color: var(--color-primary);
+  letter-spacing: -0.5px;
+}
+
+.title {
+  font: var(--text-heading-3);
+  color: var(--color-fg);
+  margin: 0;
+}
+
+.subtitle {
+  font: var(--text-body-2s);
+  color: var(--color-muted-fg);
+  margin: 0;
+  text-align: center;
+}
+
+/* 폼 */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.buttonWrap {
+  display: flex;
+  flex-direction: column;
+  margin-top: 8px;
+}
+
+.submitButton {
+  width: 100%;
+}
+
+/* 로그인 이동 */
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.loginPrompt {
+  font: var(--text-body-2s);
+  color: var(--color-muted-fg);
+}
+
+.loginLink {
+  font: var(--text-body-2m);
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.loginLink:hover {
+  text-decoration: underline;
+}
