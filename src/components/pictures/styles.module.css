@@ -18,6 +18,10 @@
   align-items: center;
 }
 
+.filterSelect {
+  width: 120px;
+}
+
 /* Gap: 1168 x 42 */
 .gap42 {
   width: 100%;
@@ -28,5 +32,21 @@
 .main {
   width: 100%;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+/* Photo Card */
+.photoCard {
+  width: 640px;
+  display: flex;
+  flex-direction: column;
+}
+
+.photo {
+  width: 640px;
+  height: 640px;
+  object-fit: cover;
+  border-radius: 12px;
 }
