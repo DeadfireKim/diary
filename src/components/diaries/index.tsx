@@ -34,35 +34,39 @@ export default function Diaries() {
 
       {/* Search section: 1168 * 48 */}
       <div className={styles.search}>
-        <SelectBox
-          variant="primary"
-          size="medium"
-          theme="light"
-          options={filterOptions}
-          value={filterValue}
-          onChange={setFilterValue}
-          placeholder="필터 선택"
-          className={styles.filterSelect}
-        />
-        <Searchbar
-          variant="primary"
-          size="medium"
-          theme="light"
-          value={searchValue}
-          onChange={(e) => setSearchValue(e.target.value)}
-          placeholder="일기 검색..."
-          className={styles.searchbar}
-        />
-        <Button
-          variant="primary"
-          size="medium"
-          theme="light"
-          className={styles.writeButton}
-          onClick={openDiaryModal}
-          data-testid="write-button"
-        >
-          일기쓰기
-        </Button>
+        <div className={styles.filterWrap}>
+          <SelectBox
+            variant="primary"
+            size="medium"
+            theme="light"
+            options={filterOptions}
+            value={filterValue}
+            onChange={setFilterValue}
+            placeholder="필터 선택"
+          />
+        </div>
+        <div className={styles.searchWrap}>
+          <Searchbar
+            variant="primary"
+            size="medium"
+            theme="light"
+            value={searchValue}
+            onChange={(e) => setSearchValue(e.target.value)}
+            placeholder="일기 검색..."
+          />
+        </div>
+        <div className={styles.writeButtonWrap}>
+          <Button
+            variant="primary"
+            size="medium"
+            theme="light"
+            className={styles.writeButton}
+            onClick={openDiaryModal}
+            data-testid="write-button"
+          >
+            일기쓰기
+          </Button>
+        </div>
       </div>
 
       {/* Gap: 1168 * 42 */}

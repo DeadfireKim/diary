@@ -16,6 +16,8 @@ const fillForm = async (
   await page.fill('[data-testid="signup-name-input"]', TEST_NAME);
 };
 
+test.describe.configure({ mode: "serial" });
+
 test.describe("AuthSignup 폼 등록 기능", () => {
   test.beforeEach(async ({ page }) => {
     await page.goto("/auth/signup");

@@ -19,20 +19,23 @@
   gap: 12px;
 }
 
-.filterSelect {
+.filterWrap {
   width: 200px;
   flex-shrink: 0;
 }
 
-.searchbar {
-  width: 320px;
+.searchWrap {
+  flex: 1;
+  min-width: 0;
+}
+
+.writeButtonWrap {
   flex-shrink: 0;
+  margin-left: auto;
 }
 
 .writeButton {
   width: 140px;
-  flex-shrink: 0;
-  margin-left: auto;
   background-color: var(--color-gray-black);
   color: var(--color-gray-white);
 }
