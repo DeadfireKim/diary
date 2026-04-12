@@ -2,8 +2,10 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { ThemeProvider } from "@/commons/providers/next-themes/next-themes.provider";
+import { AuthProvider } from "@/commons/providers/auth/auth.provider";
 import { ReactQueryProvider } from "@/commons/providers/react-query/react-query.provider";
 import { ModalProvider } from "@/commons/providers/modal/modal.provider";
+import { AuthGuard } from "@/commons/providers/auth/auth.guard";
 import Layout from "@/commons/layout";
 
 const geistSans = localFont({
@@ -33,11 +35,15 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <ThemeProvider>
-          <ReactQueryProvider>
-            <ModalProvider>
-              <Layout>{children}</Layout>
-            </ModalProvider>
-          </ReactQueryProvider>
+          <AuthProvider>
+            <ReactQueryProvider>
+              <ModalProvider>
+                <AuthGuard>
+                  <Layout>{children}</Layout>
+                </AuthGuard>
+              </ModalProvider>
+            </ReactQueryProvider>
+          </AuthProvider>
         </ThemeProvider>
       </body>
     </html>

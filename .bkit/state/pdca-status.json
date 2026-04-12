@@ -1,6 +1,6 @@
 {
   "version": "2.0",
-  "lastUpdated": "2026-03-17T11:29:40.219Z",
+  "lastUpdated": "2026-04-12T05:47:03.183Z",
   "activeFeatures": [
     "constants",
     "modal",
@@ -22,7 +22,12 @@
     "temp",
     "e2e",
     "tests",
-    "pictures"
+    "pictures",
+    "auth-signup",
+    "signup",
+    "auth-login",
+    "login",
+    "auth"
   ],
   "primaryFeature": "constants",
   "features": {
@@ -61,7 +66,7 @@
       "documents": {},
       "timestamps": {
         "started": "2026-02-21T03:02:42.205Z",
-        "lastUpdated": "2026-03-15T08:02:51.732Z"
+        "lastUpdated": "2026-04-12T05:47:03.183Z"
       },
       "lastFile": "/Users/tj/src/diary/src/app/layout.tsx"
     },
@@ -191,9 +196,9 @@
       "documents": {},
       "timestamps": {
         "started": "2026-02-25T14:22:03.260Z",
-        "lastUpdated": "2026-03-15T07:13:24.385Z"
+        "lastUpdated": "2026-04-09T05:54:31.158Z"
       },
-      "lastFile": "/Users/tj/src/diary/src/commons/layout/index.tsx"
+      "lastFile": "/Users/tj/src/diary/tests/e2e/layout/index.auth.hook.spec.ts"
     },
     "diaries": {
       "phase": "do",
@@ -204,9 +209,9 @@
       "documents": {},
       "timestamps": {
         "started": "2026-02-28T07:26:57.463Z",
-        "lastUpdated": "2026-03-15T08:11:26.803Z"
+        "lastUpdated": "2026-04-05T13:00:00.340Z"
       },
-      "lastFile": "/Users/tj/src/diary/src/components/diaries/hooks/index.link.modal.hook.tsx"
+      "lastFile": "/Users/tj/src/diary/src/components/diaries/index.tsx"
     },
     "diaries-detail": {
       "phase": "do",
@@ -217,7 +222,7 @@
       "documents": {},
       "timestamps": {
         "started": "2026-03-02T05:45:20.082Z",
-        "lastUpdated": "2026-03-02T07:33:29.676Z"
+        "lastUpdated": "2026-03-22T08:02:27.311Z"
       },
       "lastFile": "/Users/tj/src/diary/src/components/diaries-detail/index.tsx"
     },
@@ -243,9 +248,9 @@
       "documents": {},
       "timestamps": {
         "started": "2026-03-03T09:41:52.759Z",
-        "lastUpdated": "2026-03-15T07:31:46.518Z"
+        "lastUpdated": "2026-03-22T07:27:14.840Z"
       },
-      "lastFile": "/Users/tj/src/diary/src/components/diaries-new/index.tsx"
+      "lastFile": "/Users/tj/src/diary/src/components/diaries-new/hooks/index.form.hook.tsx"
     },
     "temp": {
       "phase": "do",
@@ -295,9 +300,74 @@
       "documents": {},
       "timestamps": {
         "started": "2026-03-15T05:26:19.325Z",
-        "lastUpdated": "2026-03-15T05:26:19.325Z"
+        "lastUpdated": "2026-04-04T05:28:33.778Z"
       },
-      "lastFile": "/Users/tj/src/diary/src/app/pictures/page.tsx"
+      "lastFile": "/Users/tj/src/diary/src/components/pictures/index.tsx"
+    },
+    "auth-signup": {
+      "phase": "do",
+      "phaseNumber": 3,
+      "matchRate": null,
+      "iterationCount": 0,
+      "requirements": [],
+      "documents": {},
+      "timestamps": {
+        "started": "2026-04-04T08:36:22.998Z",
+        "lastUpdated": "2026-04-05T12:13:41.489Z"
+      },
+      "lastFile": "/Users/tj/src/diary/tests/e2e/auth-signup/index.form.hook.spec.ts"
+    },
+    "signup": {
+      "phase": "do",
+      "phaseNumber": 3,
+      "matchRate": null,
+      "iterationCount": 0,
+      "requirements": [],
+      "documents": {},
+      "timestamps": {
+        "started": "2026-04-04T08:36:34.892Z",
+        "lastUpdated": "2026-04-04T08:36:34.892Z"
+      },
+      "lastFile": "/Users/tj/src/diary/src/app/auth/signup/page.tsx"
+    },
+    "auth-login": {
+      "phase": "do",
+      "phaseNumber": 3,
+      "matchRate": null,
+      "iterationCount": 0,
+      "requirements": [],
+      "documents": {},
+      "timestamps": {
+        "started": "2026-04-05T07:48:32.665Z",
+        "lastUpdated": "2026-04-05T12:13:03.645Z"
+      },
+      "lastFile": "/Users/tj/src/diary/tests/e2e/auth-login/index.form.hook.spec.ts"
+    },
+    "login": {
+      "phase": "do",
+      "phaseNumber": 3,
+      "matchRate": null,
+      "iterationCount": 0,
+      "requirements": [],
+      "documents": {},
+      "timestamps": {
+        "started": "2026-04-05T07:48:39.259Z",
+        "lastUpdated": "2026-04-05T07:48:39.259Z"
+      },
+      "lastFile": "/Users/tj/src/diary/src/app/auth/login/page.tsx"
+    },
+    "auth": {
+      "phase": "do",
+      "phaseNumber": 3,
+      "matchRate": null,
+      "iterationCount": 0,
+      "requirements": [],
+      "documents": {},
+      "timestamps": {
+        "started": "2026-04-06T10:34:24.644Z",
+        "lastUpdated": "2026-04-12T05:46:51.582Z"
+      },
+      "lastFile": "/Users/tj/src/diary/src/commons/providers/auth/auth.guard.tsx"
     }
   },
   "pipeline": {
@@ -308,7 +378,7 @@
   "session": {
     "startedAt": "2026-02-20T05:42:45.211Z",
     "onboardingCompleted": false,
-    "lastActivity": "2026-03-17T11:29:40.219Z"
+    "lastActivity": "2026-04-12T05:47:03.183Z"
   },
   "history": [
     {
@@ -1292,6 +1362,486 @@
     {
       "timestamp": "2026-03-17T11:29:40.219Z",
       "feature": "modal",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-19T10:57:02.116Z",
+      "feature": "diaries-new",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-19T10:58:36.280Z",
+      "feature": "diaries-new",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-19T10:58:57.419Z",
+      "feature": "diaries-new",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-19T10:59:01.257Z",
+      "feature": "diaries-new",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-19T10:59:22.522Z",
+      "feature": "diaries-new",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-19T10:59:30.022Z",
+      "feature": "diaries-new",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-22T07:22:57.110Z",
+      "feature": "diaries-new",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-22T07:23:38.925Z",
+      "feature": "diaries-new",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-22T07:23:49.666Z",
+      "feature": "diaries-new",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-22T07:23:56.326Z",
+      "feature": "diaries-new",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-22T07:24:01.900Z",
+      "feature": "diaries-new",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-22T07:24:06.195Z",
+      "feature": "diaries-new",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-22T07:24:12.291Z",
+      "feature": "diaries-new",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-22T07:24:23.427Z",
+      "feature": "diaries-new",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-22T07:25:12.185Z",
+      "feature": "diaries-new",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-22T07:27:14.840Z",
+      "feature": "diaries-new",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-22T08:01:43.087Z",
+      "feature": "diaries-detail",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-22T08:01:55.201Z",
+      "feature": "diaries-detail",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-22T08:02:11.292Z",
+      "feature": "diaries-detail",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-22T08:02:16.264Z",
+      "feature": "diaries-detail",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-22T08:02:27.311Z",
+      "feature": "diaries-detail",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-22T08:11:53.832Z",
+      "feature": "diary",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-22T08:21:21.022Z",
+      "feature": "diaries",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-22T08:21:31.015Z",
+      "feature": "diaries",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-22T08:21:42.759Z",
+      "feature": "diaries",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-22T08:22:01.814Z",
+      "feature": "diaries",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-22T08:22:14.411Z",
+      "feature": "diaries",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-22T08:22:58.717Z",
+      "feature": "diaries",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-22T08:23:29.082Z",
+      "feature": "diaries",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-22T08:23:36.711Z",
+      "feature": "diaries",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-22T08:23:42.654Z",
+      "feature": "diaries",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-22T08:23:47.151Z",
+      "feature": "diaries",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-22T08:23:51.438Z",
+      "feature": "diaries",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-22T08:23:57.057Z",
+      "feature": "diaries",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-22T08:24:04.088Z",
+      "feature": "diaries",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-22T08:24:27.090Z",
+      "feature": "diaries",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-22T08:24:58.213Z",
+      "feature": "diaries",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-22T08:25:22.141Z",
+      "feature": "diaries",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-23T08:57:42.559Z",
+      "feature": "diaries",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-23T08:57:49.930Z",
+      "feature": "diaries",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-23T08:58:05.591Z",
+      "feature": "diaries",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-23T08:58:22.532Z",
+      "feature": "diaries",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-04T02:52:48.680Z",
+      "feature": "pictures",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-04T02:52:51.321Z",
+      "feature": "pictures",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-04T03:22:29.030Z",
+      "feature": "pictures",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-04T03:31:00.556Z",
+      "feature": "pictures",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-04T04:28:30.238Z",
+      "feature": "pictures",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-04T04:28:36.389Z",
+      "feature": "pictures",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-04T04:28:49.363Z",
+      "feature": "pictures",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-04T04:29:30.889Z",
+      "feature": "pictures",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-04T05:28:33.778Z",
+      "feature": "pictures",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-04T08:36:22.998Z",
+      "feature": "auth-signup",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-04T08:36:34.892Z",
+      "feature": "signup",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-04T09:05:50.201Z",
+      "feature": "auth-signup",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-04T09:06:05.270Z",
+      "feature": "auth-signup",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-04T09:06:18.256Z",
+      "feature": "auth-signup",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-05T07:48:32.665Z",
+      "feature": "auth-login",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-05T07:48:39.259Z",
+      "feature": "login",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-05T12:11:36.594Z",
+      "feature": "auth-login",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-05T12:11:50.175Z",
+      "feature": "auth-login",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-05T12:12:01.631Z",
+      "feature": "auth-login",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-05T12:13:03.645Z",
+      "feature": "auth-login",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-05T12:13:41.489Z",
+      "feature": "auth-signup",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-05T13:00:00.340Z",
+      "feature": "diaries",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-06T10:34:24.644Z",
+      "feature": "auth",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-06T10:34:29.304Z",
+      "feature": "diary",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-06T10:34:32.043Z",
+      "feature": "diary",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-06T10:34:34.979Z",
+      "feature": "diary",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-06T10:35:00.079Z",
+      "feature": "diary",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-06T11:55:32.254Z",
+      "feature": "layout",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-06T11:55:35.349Z",
+      "feature": "layout",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-06T11:55:40.678Z",
+      "feature": "layout",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-09T05:54:00.982Z",
+      "feature": "layout",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-09T05:54:06.260Z",
+      "feature": "layout",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-09T05:54:09.185Z",
+      "feature": "layout",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-09T05:54:15.216Z",
+      "feature": "layout",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-09T05:54:31.158Z",
+      "feature": "layout",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-12T05:46:51.582Z",
+      "feature": "auth",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-12T05:47:00.716Z",
+      "feature": "diary",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-12T05:47:03.183Z",
+      "feature": "diary",
       "phase": "do",
       "action": "updated"
     }

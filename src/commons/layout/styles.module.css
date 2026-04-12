@@ -12,8 +12,30 @@
   height: 60px;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: space-between;
   padding: 0 24px;
+}
+
+/* Auth status area */
+.authArea {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.userName {
+  font: var(--text-body-2m);
+  color: var(--color-gray-80);
+}
+
+.logoutButton {
+  width: 100px;
+  white-space: nowrap;
+}
+
+.loginButton {
+  width: 80px;
+  white-space: nowrap;
 }
 
 .logoLink {

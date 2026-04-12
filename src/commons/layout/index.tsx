@@ -3,9 +3,11 @@
 import { ReactNode } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import Button from "@/commons/components/button";
 import { routes } from "@/commons/constants/url";
 import { useLinkRouting } from "./hooks/index.link.routing.hook";
 import { useAreaVisibility } from "./hooks/index.area.hook";
+import { useLayoutAuth } from "./hooks/index.auth.hook";
 import styles from "./styles.module.css";
 
 type LayoutProps = {
@@ -15,6 +17,7 @@ type LayoutProps = {
 export default function Layout({ children }: LayoutProps) {
   const { pathname } = useLinkRouting();
   const visibility = useAreaVisibility();
+  const { isLoggedIn, user, login, logout } = useLayoutAuth();
 
   return (
     <div className={styles.container}>
@@ -26,6 +29,36 @@ export default function Layout({ children }: LayoutProps) {
                 Diary
               </div>
             </Link>
+            {isLoggedIn ? (
+              <div className={styles.authArea} data-testid="auth-status-area">
+                <span className={styles.userName} data-testid="auth-user-name">
+                  {user?.name}
+                </span>
+                <Button
+                  variant="secondary"
+                  size="small"
+                  theme="light"
+                  className={styles.logoutButton}
+                  onClick={logout}
+                  data-testid="logout-button"
+                >
+                  로그아웃
+                </Button>
+              </div>
+            ) : (
+              <div className={styles.authArea} data-testid="auth-status-area">
+                <Button
+                  variant="secondary"
+                  size="small"
+                  theme="light"
+                  className={styles.loginButton}
+                  onClick={login}
+                  data-testid="login-button"
+                >
+                  로그인
+                </Button>
+              </div>
+            )}
           </header>
 
           <div className={styles.gap} data-testid="layout-gap-1" />

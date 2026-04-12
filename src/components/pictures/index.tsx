@@ -44,15 +44,16 @@ export default function Pictures() {
 
       {/* Filter: 1168 x 48 */}
       <div className={styles.filter}>
-        <SelectBox
-          variant="primary"
-          size="medium"
-          theme="light"
-          options={FILTER_OPTIONS}
-          value={filterValue}
-          onChange={setFilterValue}
-          className={styles.filterSelect}
-        />
+        <div className={styles.filterWrap}>
+          <SelectBox
+            variant="primary"
+            size="medium"
+            theme="light"
+            options={FILTER_OPTIONS}
+            value={filterValue}
+            onChange={setFilterValue}
+          />
+        </div>
       </div>
 
       {/* Gap: 1168 x 42 */}
