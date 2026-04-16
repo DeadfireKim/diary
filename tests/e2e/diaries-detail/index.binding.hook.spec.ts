@@ -2,6 +2,10 @@ import { test, expect } from "@playwright/test";
 
 test.describe("DiariesDetail 데이터 바인딩", () => {
   test.beforeEach(async ({ page }) => {
+    // MemberOnly 페이지 접근을 위한 테스트 바이패스 설정
+    await page.addInitScript(() => {
+      window.__TEST_BYPASS__ = true;
+    });
     // 로컬스토리지 초기화 및 테스트 데이터 설정
     await page.goto("/diaries");
     await page.evaluate(() => {

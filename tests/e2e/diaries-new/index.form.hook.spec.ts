@@ -2,6 +2,10 @@ import { test, expect } from "@playwright/test";
 
 test.describe("DiariesNew 폼 등록 기능", () => {
   test.beforeEach(async ({ page }) => {
+    // 일기쓰기 버튼 클릭을 위한 테스트 바이패스 설정
+    await page.addInitScript(() => {
+      window.__TEST_BYPASS__ = true;
+    });
     // 로컬스토리지 초기화
     await page.goto("/diaries");
     await page.evaluate(() => {

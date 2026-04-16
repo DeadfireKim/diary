@@ -5,6 +5,7 @@ test.describe("Diaries Write Button Modal", () => {
     // Given: 일기목록 페이지로 이동
     await page.goto("/diaries");
     await page.waitForSelector('[data-testid="diaries-container"]');
+    await page.evaluate(() => { window.__TEST_BYPASS__ = true; });
 
     // When: 일기쓰기 버튼을 클릭하면
     await page.click('[data-testid="write-button"]');
@@ -23,6 +24,7 @@ test.describe("Diaries Write Button Modal", () => {
     // Given: 일기목록 페이지로 이동
     await page.goto("/diaries");
     await page.waitForSelector('[data-testid="diaries-container"]');
+    await page.evaluate(() => { window.__TEST_BYPASS__ = true; });
 
     // When: 일기쓰기 버튼을 클릭하면
     await page.click('[data-testid="write-button"]');
@@ -41,6 +43,7 @@ test.describe("Diaries Write Button Modal", () => {
     // Given: 일기목록 페이지에서 모달을 연 상태
     await page.goto("/diaries");
     await page.waitForSelector('[data-testid="diaries-container"]');
+    await page.evaluate(() => { window.__TEST_BYPASS__ = true; });
     await page.click('[data-testid="write-button"]');
     await expect(page.locator('[role="dialog"]')).toBeVisible();
 

@@ -7,6 +7,7 @@ test.describe("Diaries New Modal Close Hook", () => {
     // Given: 일기목록 페이지에서 일기쓰기 모달을 연 상태
     await page.goto("/diaries");
     await page.waitForSelector('[data-testid="diaries-container"]');
+    await page.evaluate(() => { window.__TEST_BYPASS__ = true; });
     await page.click('[data-testid="write-button"]');
     await expect(page.locator('[data-testid="diaries-new-wrapper"]')).toBeVisible();
 
@@ -30,6 +31,7 @@ test.describe("Diaries New Modal Close Hook", () => {
     // Given: 일기쓰기 모달을 열고 닫기 버튼을 눌러 등록취소 모달을 연 상태
     await page.goto("/diaries");
     await page.waitForSelector('[data-testid="diaries-container"]');
+    await page.evaluate(() => { window.__TEST_BYPASS__ = true; });
     await page.click('[data-testid="write-button"]');
     await expect(page.locator('[data-testid="diaries-new-wrapper"]')).toBeVisible();
     await page.click('[data-testid="diaries-new-close-button"]');
@@ -55,6 +57,7 @@ test.describe("Diaries New Modal Close Hook", () => {
     // Given: 일기쓰기 모달을 열고 닫기 버튼을 눌러 등록취소 모달을 연 상태
     await page.goto("/diaries");
     await page.waitForSelector('[data-testid="diaries-container"]');
+    await page.evaluate(() => { window.__TEST_BYPASS__ = true; });
     await page.click('[data-testid="write-button"]');
     await expect(page.locator('[data-testid="diaries-new-wrapper"]')).toBeVisible();
     await page.click('[data-testid="diaries-new-close-button"]');

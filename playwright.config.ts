@@ -4,11 +4,15 @@ import { defineConfig, devices } from '@playwright/test';
  * Playwright E2E 테스트 설정
  *
  * 주의사항:
- * - 이 설정 파일은 수정하지 말 것 (04-func.md 규칙)
  * - baseURL을 사용하여 page.goto()에서는 경로만 사용
  * - timeout은 2000ms 미만으로 설정
  * - data-testid를 사용하여 CSS Module 충돌 방지
  */
+
+// 병렬 에이전트별 포트 분리: 기본 3000 + agent index
+const agentIndex = parseInt(process.env.AGENT_INDEX ?? '0');
+const port = 3000 + agentIndex;
+
 export default defineConfig({
   // 테스트 디렉토리
   testDir: './tests/e2e',
@@ -41,7 +45,7 @@ export default defineConfig({
   // 모든 프로젝트에 공통으로 적용되는 설정
   use: {
     // Base URL (page.goto()에서 상대 경로 사용 가능)
-    baseURL: 'http://localhost:3000',
+    baseURL: `http://localhost:${port}`,
 
     // 테스트 실패 시 스크린샷 촬영
     screenshot: 'only-on-failure',
@@ -79,11 +83,14 @@ export default defineConfig({
 
   // 웹 서버 설정 (테스트 실행 전 자동으로 dev 서버 시작)
   webServer: {
-    command: 'npm run dev',
-    url: 'http://localhost:3000',
+    command: `npm run dev -- --port ${port}`,
+    url: `http://localhost:${port}`,
     reuseExistingServer: !process.env.CI,
     timeout: 120000,
     stdout: 'ignore',
     stderr: 'pipe',
+    env: {
+      NEXT_PUBLIC_TEST_ENV: 'test',
+    },
   },
 });

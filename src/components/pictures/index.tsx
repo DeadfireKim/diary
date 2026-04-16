@@ -1,15 +1,9 @@
 "use client";
 
 import { useState, useRef, useEffect, Fragment } from "react";
-import SelectBox from "@/commons/components/selectbox";
 import { usePicturesBinding } from "./hooks/index.binding.hook";
+import { usePicturesFilter, FilterType } from "./hooks/index.filter.hook";
 import styles from "./styles.module.css";
-
-const FILTER_OPTIONS = [
-  { value: "all", label: "기본" },
-  { value: "recent", label: "최신순" },
-  { value: "oldest", label: "오래된순" },
-];
 
 const SPLASH_COUNT = 6;
 
@@ -18,9 +12,10 @@ function SplashCard() {
 }
 
 export default function Pictures() {
-  const [filterValue, setFilterValue] = useState("all");
   const { dogs, isLoading, isError, fetchNextPage, isFetchingNextPage } =
     usePicturesBinding();
+  const { filterType, setFilterType, imageSize, filterOptions } =
+    usePicturesFilter();
   const sentinelRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -37,6 +32,13 @@ export default function Pictures() {
     return () => observer.disconnect();
   }, [dogs.length, fetchNextPage]);
 
+  const photoSizeClass =
+    filterType === "landscape"
+      ? styles.photoLandscape
+      : filterType === "portrait"
+        ? styles.photoPortrait
+        : styles.photoDefault;
+
   return (
     <div className={styles.container} data-testid="pictures-container">
       {/* Gap: 1168 x 32 */}
@@ -45,14 +47,18 @@ export default function Pictures() {
       {/* Filter: 1168 x 48 */}
       <div className={styles.filter}>
         <div className={styles.filterWrap}>
-          <SelectBox
-            variant="primary"
-            size="medium"
-            theme="light"
-            options={FILTER_OPTIONS}
-            value={filterValue}
-            onChange={setFilterValue}
-          />
+          <select
+            data-testid="pictures-filter"
+            value={filterType}
+            onChange={(e) => setFilterType(e.target.value as FilterType)}
+            className={styles.filterSelect}
+          >
+            {filterOptions.map((option) => (
+              <option key={option.value} value={option.value}>
+                {option.label}
+              </option>
+            ))}
+          </select>
         </div>
       </div>
 
@@ -82,9 +88,9 @@ export default function Pictures() {
               <img
                 src={dogUrl}
                 alt={`강아지 사진 ${index + 1}`}
-                width={640}
-                height={640}
-                className={styles.photo}
+                width={imageSize.width}
+                height={imageSize.height}
+                className={`${styles.photo} ${photoSizeClass}`}
                 data-testid="dog-image"
               />
             </div>

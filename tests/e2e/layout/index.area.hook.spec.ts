@@ -16,6 +16,10 @@ test.describe("Layout Area Visibility", () => {
   });
 
   test("일기상세 페이지에서 header와 footer만 표시된다", async ({ page }) => {
+    // MemberOnly 페이지 접근을 위한 테스트 바이패스 설정
+    await page.addInitScript(() => {
+      window.__TEST_BYPASS__ = true;
+    });
     // Given: 일기상세 페이지로 이동
     await page.goto("/diaries/123");
     await page.waitForSelector('[data-testid="layout-main"]');

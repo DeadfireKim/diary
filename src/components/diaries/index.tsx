@@ -10,22 +10,18 @@ import { getEmotionMeta } from "@/commons/constants/enum";
 import { useDiaryModal } from "./hooks/index.link.modal.hook";
 import { useDiariesBinding } from "./hooks/index.binding.hook";
 import { useDiaryRouting } from "./hooks/index.link.routing.hook";
+import { useDiarySearch } from "./hooks/index.search.hook";
+import { useDiaryFilter, FilterValue } from "./hooks/index.filter.hook";
 import styles from "./styles.module.css";
 
 export default function Diaries() {
   const { diaries, isLoading } = useDiariesBinding();
   const { navigateToDiaryDetail } = useDiaryRouting();
-  const [filterValue, setFilterValue] = useState("");
-  const [searchValue, setSearchValue] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
+  const { searchValue, setSearchValue, filteredDiaries } = useDiarySearch(diaries);
+  const { filterValue, setFilterValue, filterOptions, emotionFilteredDiaries } = useDiaryFilter(filteredDiaries);
   const totalPages = 10; // Mock total pages
   const { openDiaryModal } = useDiaryModal();
-
-  const filterOptions = [
-    { value: "all", label: "전체" },
-    { value: "recent", label: "최신순" },
-    { value: "oldest", label: "오래된순" },
-  ];
 
   return (
     <div className={styles.container} data-testid="diaries-container">
@@ -34,14 +30,14 @@ export default function Diaries() {
 
       {/* Search section: 1168 * 48 */}
       <div className={styles.search}>
-        <div className={styles.filterWrap}>
+        <div className={styles.filterWrap} data-testid="diary-filter">
           <SelectBox
             variant="primary"
             size="medium"
             theme="light"
             options={filterOptions}
             value={filterValue}
-            onChange={setFilterValue}
+            onChange={(value) => setFilterValue(value as FilterValue)}
             placeholder="필터 선택"
           />
         </div>
@@ -53,6 +49,7 @@ export default function Diaries() {
             value={searchValue}
             onChange={(e) => setSearchValue(e.target.value)}
             placeholder="일기 검색..."
+            data-testid="search-input"
           />
         </div>
         <div className={styles.writeButtonWrap}>
@@ -74,7 +71,7 @@ export default function Diaries() {
 
       {/* Main section: 1168 * 936 */}
       <div className={styles.main}>
-        {diaries.map((diary) => {
+        {emotionFilteredDiaries.map((diary) => {
           const emotionMeta = getEmotionMeta(diary.emotion);
           return (
             <div

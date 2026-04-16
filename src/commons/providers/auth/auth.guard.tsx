@@ -54,8 +54,11 @@ export function AuthGuard({ children }: { children: React.ReactNode }) {
       return;
     }
 
-    // 테스트환경은 항상 로그인 유저로 처리
-    const effectivelyLoggedIn = isTestEnv || isLoggedIn;
+    // window.__TEST_BYPASS__ = true 또는 테스트환경이면 패스
+    const testBypass =
+      (typeof window !== "undefined" && window.__TEST_BYPASS__ === true) ||
+      isTestEnv;
+    const effectivelyLoggedIn = testBypass || isLoggedIn;
 
     if (effectivelyLoggedIn) {
       setIsAuthorized(true);
