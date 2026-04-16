@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import Image from "next/image";
 import SelectBox from "@/commons/components/selectbox";
 import Searchbar from "@/commons/components/searchbar";
@@ -12,15 +11,15 @@ import { useDiariesBinding } from "./hooks/index.binding.hook";
 import { useDiaryRouting } from "./hooks/index.link.routing.hook";
 import { useDiarySearch } from "./hooks/index.search.hook";
 import { useDiaryFilter, FilterValue } from "./hooks/index.filter.hook";
+import { useDiaryPagination } from "./hooks/index.pagination.hook";
 import styles from "./styles.module.css";
 
 export default function Diaries() {
   const { diaries, isLoading } = useDiariesBinding();
   const { navigateToDiaryDetail } = useDiaryRouting();
-  const [currentPage, setCurrentPage] = useState(1);
   const { searchValue, setSearchValue, filteredDiaries } = useDiarySearch(diaries);
   const { filterValue, setFilterValue, filterOptions, emotionFilteredDiaries } = useDiaryFilter(filteredDiaries);
-  const totalPages = 10; // Mock total pages
+  const { currentPage, setCurrentPage, pagedDiaries, totalPages } = useDiaryPagination(emotionFilteredDiaries);
   const { openDiaryModal } = useDiaryModal();
 
   return (
@@ -71,7 +70,7 @@ export default function Diaries() {
 
       {/* Main section: 1168 * 936 */}
       <div className={styles.main}>
-        {emotionFilteredDiaries.map((diary) => {
+        {pagedDiaries.map((diary) => {
           const emotionMeta = getEmotionMeta(diary.emotion);
           return (
             <div

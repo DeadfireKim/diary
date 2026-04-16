@@ -3,10 +3,11 @@
 import Image from "next/image";
 import Button from "@/commons/components/button";
 import Input from "@/commons/components/input";
-import { getEmotionMeta } from "@/commons/constants/enum";
+import { getEmotionMeta, EmotionType, allEmotions } from "@/commons/constants/enum";
 import { useDiaryBinding } from "./hooks/index.binding.hook";
 import { useRetrospectForm } from "./hooks/index.retrospect.form.hook";
 import { useRetrospectBinding } from "./hooks/index.retrospect.binding.hook";
+import { useUpdateDiary } from "./hooks/index.update.hook";
 import styles from "./styles.module.css";
 
 export default function DiariesDetail() {
@@ -15,6 +16,13 @@ export default function DiariesDetail() {
 
   const diaryId = diary?.id ?? 0;
   const { register, onSubmit, isSubmitEnabled } = useRetrospectForm(diaryId);
+  const {
+    isEditMode,
+    register: registerUpdate,
+    onClickEdit,
+    onSubmit: onSubmitUpdate,
+    isSubmitEnabled: isUpdateEnabled,
+  } = useUpdateDiary(diary);
 
   if (isLoading) {
     return (
@@ -38,10 +46,6 @@ export default function DiariesDetail() {
 
   const handleCopyContent = () => {
     navigator.clipboard.writeText(diary.content);
-  };
-
-  const handleEdit = () => {
-    console.log("Edit clicked");
   };
 
   const handleDelete = () => {
@@ -116,8 +120,9 @@ export default function DiariesDetail() {
           variant="secondary"
           size="medium"
           theme="light"
-          onClick={handleEdit}
+          onClick={onClickEdit}
           className={styles.editButton}
+          data-testid="edit-button"
         >
           수정
         </Button>
@@ -135,6 +140,67 @@ export default function DiariesDetail() {
       {/* Gap: 1168 * 24 */}
       <div className={styles.gap24} />
 
+      {/* Edit Mode section */}
+      {isEditMode && (
+        <form
+          onSubmit={onSubmitUpdate}
+          className={styles.editModeSection}
+          data-testid="edit-mode"
+        >
+          <div className={styles.editField}>
+            <label className={styles.editLabel}>감정</label>
+            <select
+              {...registerUpdate("emotion")}
+              className={styles.editEmotionSelect}
+              data-testid="edit-emotion-select"
+            >
+              {allEmotions.map((emotion) => (
+                <option key={emotion} value={emotion}>
+                  {emotion}
+                </option>
+              ))}
+            </select>
+          </div>
+          <div className={styles.editField}>
+            <label className={styles.editLabel}>제목</label>
+            <Input
+              variant="primary"
+              size="medium"
+              theme="light"
+              {...registerUpdate("title")}
+              placeholder="제목을 입력하세요"
+              className={styles.editInputField}
+              data-testid="edit-title-input"
+            />
+          </div>
+          <div className={styles.editField}>
+            <label className={styles.editLabel}>내용</label>
+            <Input
+              variant="primary"
+              size="medium"
+              theme="light"
+              {...registerUpdate("content")}
+              placeholder="내용을 입력하세요"
+              className={styles.editInputField}
+              data-testid="edit-content-input"
+            />
+          </div>
+          <div className={styles.editFooter}>
+            <Button
+              variant="primary"
+              size="medium"
+              theme="light"
+              type="submit"
+              disabled={!isUpdateEnabled}
+              className={styles.editSubmitButton}
+              data-testid="edit-submit-button"
+            >
+              수정하기
+            </Button>
+          </div>
+        </form>
+      )}
+
       {/* Retrospect Title */}
       <h2 className={styles.retrospectTitle}>회고</h2>
 
@@ -148,13 +214,14 @@ export default function DiariesDetail() {
           placeholder="회고를 입력하세요"
           className={styles.retrospectInputField}
           data-testid="retrospect-input"
+          disabled={isEditMode}
         />
         <Button
           variant="primary"
           size="medium"
           theme="light"
           type="submit"
-          disabled={!isSubmitEnabled}
+          disabled={!isSubmitEnabled || isEditMode}
           className={styles.retrospectButton}
           data-testid="retrospect-submit-button"
         >
