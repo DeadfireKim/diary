@@ -20,9 +20,14 @@ export default function DiariesDetail() {
     isEditMode,
     register: registerUpdate,
     onClickEdit,
+    onClickCancel,
     onSubmit: onSubmitUpdate,
+    watch: watchUpdate,
+    setValue: setValueUpdate,
     isSubmitEnabled: isUpdateEnabled,
   } = useUpdateDiary(diary);
+
+  const selectedEmotion = watchUpdate("emotion");
 
   if (isLoading) {
     return (
@@ -58,7 +63,7 @@ export default function DiariesDetail() {
       <div className={styles.gap64} />
 
       {/* Detail Title section: 1168 * 84 */}
-      <div className={styles.detailTitle}>
+      <div className={styles.detailTitle} style={{ display: isEditMode ? "none" : undefined }}>
         <div className={styles.titleSection}>
           <h1 className={styles.title} data-testid="diary-detail-title">{diary.title}</h1>
           <div className={styles.titleMeta}>
@@ -91,10 +96,10 @@ export default function DiariesDetail() {
       </div>
 
       {/* Gap: 1168 * 24 */}
-      <div className={styles.gap24} />
+      {!isEditMode && <div className={styles.gap24} />}
 
       {/* Detail Content section: 1168 * 169 */}
-      <div className={styles.detailContent}>
+      <div className={styles.detailContent} style={{ display: isEditMode ? "none" : undefined }}>
         <p className={styles.contentText} data-testid="diary-detail-content">{diary.content}</p>
         <button
           className={styles.copyButton}
@@ -112,10 +117,10 @@ export default function DiariesDetail() {
       </div>
 
       {/* Gap: 1168 * 24 */}
-      <div className={styles.gap24} />
+      {!isEditMode && <div className={styles.gap24} />}
 
       {/* Detail Footer section: 1168 * 56 */}
-      <div className={styles.detailFooter}>
+      <div className={styles.detailFooter} style={{ display: isEditMode ? "none" : undefined }}>
         <Button
           variant="secondary"
           size="medium"
@@ -137,9 +142,6 @@ export default function DiariesDetail() {
         </Button>
       </div>
 
-      {/* Gap: 1168 * 24 */}
-      <div className={styles.gap24} />
-
       {/* Edit Mode section */}
       {isEditMode && (
         <form
@@ -147,20 +149,35 @@ export default function DiariesDetail() {
           className={styles.editModeSection}
           data-testid="edit-mode"
         >
+          {/* Emotion buttons */}
           <div className={styles.editField}>
-            <label className={styles.editLabel}>감정</label>
-            <select
-              {...registerUpdate("emotion")}
-              className={styles.editEmotionSelect}
-              data-testid="edit-emotion-select"
-            >
-              {allEmotions.map((emotion) => (
-                <option key={emotion} value={emotion}>
-                  {emotion}
-                </option>
-              ))}
-            </select>
+            <label className={styles.editEmotionLabel_header}>오늘 기분은 어땠나요?</label>
+            <div className={styles.editEmotionButtons}>
+              {allEmotions.map((emotion) => {
+                const emotionMeta = getEmotionMeta(emotion);
+                return (
+                  <button
+                    key={emotion}
+                    type="button"
+                    className={`${styles.editEmotionButton} ${
+                      selectedEmotion === emotion ? styles.editEmotionButtonSelected : ""
+                    }`}
+                    onClick={() => setValueUpdate("emotion", emotion, { shouldValidate: true })}
+                    data-testid={`edit-emotion-button-${emotion}`}
+                  >
+                    <span className={styles.editRadioCircle}>
+                      {selectedEmotion === emotion && (
+                        <span className={styles.editRadioFill} />
+                      )}
+                    </span>
+                    <span className={styles.editEmotionLabel}>{emotionMeta.label}</span>
+                  </button>
+                );
+              })}
+            </div>
           </div>
+
+          {/* Title */}
           <div className={styles.editField}>
             <label className={styles.editLabel}>제목</label>
             <Input
@@ -173,19 +190,31 @@ export default function DiariesDetail() {
               data-testid="edit-title-input"
             />
           </div>
+
+          {/* Content */}
           <div className={styles.editField}>
             <label className={styles.editLabel}>내용</label>
-            <Input
-              variant="primary"
-              size="medium"
-              theme="light"
+            <textarea
               {...registerUpdate("content")}
               placeholder="내용을 입력하세요"
-              className={styles.editInputField}
+              className={styles.editContentTextarea}
               data-testid="edit-content-input"
             />
           </div>
+
+          {/* Footer */}
           <div className={styles.editFooter}>
+            <Button
+              variant="secondary"
+              size="medium"
+              theme="light"
+              type="button"
+              onClick={onClickCancel}
+              className={styles.editCancelButton}
+              data-testid="edit-cancel-button"
+            >
+              취소
+            </Button>
             <Button
               variant="primary"
               size="medium"
@@ -195,7 +224,7 @@ export default function DiariesDetail() {
               className={styles.editSubmitButton}
               data-testid="edit-submit-button"
             >
-              수정하기
+              수정 하기
             </Button>
           </div>
         </form>
@@ -211,7 +240,7 @@ export default function DiariesDetail() {
           size="medium"
           theme="light"
           {...register("content")}
-          placeholder="회고를 입력하세요"
+          placeholder={isEditMode ? "수정중일땐 회고를 작성할 수 없어요." : "회고를 입력하세요"}
           className={styles.retrospectInputField}
           data-testid="retrospect-input"
           disabled={isEditMode}

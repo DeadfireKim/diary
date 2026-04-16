@@ -3,7 +3,7 @@
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { EmotionType } from "@/commons/constants/enum";
 import { DiaryData } from "./index.binding.hook";
 
@@ -20,9 +20,6 @@ type UpdateDiaryFormValues = z.infer<typeof updateDiarySchema>;
 
 const STORAGE_KEY = "diaries";
 
-/**
- * 로컬스토리지에서 일기 목록 조회
- */
 function getDiaries(): DiaryData[] {
   if (typeof window === "undefined") return [];
   try {
@@ -33,9 +30,6 @@ function getDiaries(): DiaryData[] {
   }
 }
 
-/**
- * 로컬스토리지에 일기 목록 저장
- */
 function saveDiaries(diaries: DiaryData[]): void {
   if (typeof window === "undefined") return;
   localStorage.setItem(STORAGE_KEY, JSON.stringify(diaries));
@@ -43,6 +37,7 @@ function saveDiaries(diaries: DiaryData[]): void {
 
 /**
  * 일기 수정 Hook
+ * 수정 완료 시 편집 모드를 닫고 페이지를 새로고침합니다.
  */
 export function useUpdateDiary(diary: DiaryData | null) {
   const [isEditMode, setIsEditMode] = useState(false);
@@ -51,6 +46,7 @@ export function useUpdateDiary(diary: DiaryData | null) {
     register,
     handleSubmit,
     watch,
+    setValue,
     reset,
     formState: { errors },
   } = useForm<UpdateDiaryFormValues>({
@@ -62,7 +58,6 @@ export function useUpdateDiary(diary: DiaryData | null) {
     },
   });
 
-  // diary가 로드되면 폼 기본값을 일기 데이터로 초기화
   useEffect(() => {
     if (diary) {
       reset({
@@ -75,7 +70,6 @@ export function useUpdateDiary(diary: DiaryData | null) {
 
   const watchedValues = watch();
 
-  // 수정 버튼 활성화 조건: emotion/title/content 중 하나라도 변경된 경우
   const isSubmitEnabled = diary
     ? watchedValues.emotion !== diary.emotion ||
       watchedValues.title !== diary.title ||
@@ -86,32 +80,40 @@ export function useUpdateDiary(diary: DiaryData | null) {
     setIsEditMode(true);
   };
 
+  const onClickCancel = () => {
+    setIsEditMode(false);
+    if (diary) {
+      reset({
+        emotion: diary.emotion,
+        title: diary.title,
+        content: diary.content,
+      });
+    }
+  };
+
   const onSubmit = handleSubmit((data: UpdateDiaryFormValues) => {
     if (!diary) return;
 
     const diaries = getDiaries();
     const updatedDiaries = diaries.map((d) =>
       d.id === diary.id
-        ? {
-            ...d,
-            emotion: data.emotion,
-            title: data.title,
-            content: data.content,
-          }
-        : d,
+        ? { ...d, emotion: data.emotion, title: data.title, content: data.content }
+        : d
     );
 
     saveDiaries(updatedDiaries);
-
-    // 수정 완료 후 페이지 새로고침
+    setIsEditMode(false);
     window.location.reload();
   });
 
   return {
     isEditMode,
     register,
-    onClickEdit,
     onSubmit,
+    watch,
+    setValue,
+    onClickEdit,
+    onClickCancel,
     errors,
     isSubmitEnabled,
   };
