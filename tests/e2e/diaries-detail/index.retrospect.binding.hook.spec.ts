@@ -41,8 +41,13 @@ const TEST_RETROSPECTS = [
 
 test.describe("DiariesDetail 회고 바인딩", () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto("/diaries/1");
-    await page.waitForSelector('[data-testid="diaries-detail-container"]');
+    // 로그인 유저 기본값 설정 (테스트 바이패스)
+    await page.addInitScript(() => {
+      window.__TEST_BYPASS__ = true;
+    });
+
+    // localStorage에 데이터 설정 후 페이지 이동
+    await page.goto("/diaries");
     await page.evaluate(
       ({ diaries, retrospects }) => {
         localStorage.setItem("diaries", JSON.stringify(diaries));
@@ -50,30 +55,39 @@ test.describe("DiariesDetail 회고 바인딩", () => {
       },
       { diaries: TEST_DIARIES, retrospects: TEST_RETROSPECTS }
     );
-    await page.reload();
-    await page.waitForSelector('[data-testid="diaries-detail-container"]');
   });
 
   test("diaryId=1과 일치하는 회고만 표시된다", async ({ page }) => {
+    await page.goto("/diaries/1");
+    await page.waitForSelector('[data-testid="diaries-detail-container"]');
+
     const items = page.locator('[data-testid="retrospect-item"]');
     await expect(items).toHaveCount(2);
   });
 
   test("회고의 content가 올바르게 바인딩된다", async ({ page }) => {
+    await page.goto("/diaries/1");
+    await page.waitForSelector('[data-testid="diaries-detail-container"]');
+
     const items = page.locator('[data-testid="retrospect-item"]');
     await expect(items.first()).toContainText("일기1의 첫 번째 회고");
     await expect(items.nth(1)).toContainText("일기1의 두 번째 회고");
   });
 
   test("회고의 createdAt이 올바르게 바인딩된다", async ({ page }) => {
+    await page.goto("/diaries/1");
+    await page.waitForSelector('[data-testid="diaries-detail-container"]');
+
     const items = page.locator('[data-testid="retrospect-item"]');
     await expect(items.first()).toContainText("2024.01.05");
     await expect(items.nth(1)).toContainText("2024.01.06");
   });
 
   test("다른 diaryId의 회고는 표시되지 않는다", async ({ page }) => {
+    await page.goto("/diaries/1");
+    await page.waitForSelector('[data-testid="diaries-detail-container"]');
+
     const items = page.locator('[data-testid="retrospect-item"]');
-    // diaryId=2의 회고는 표시되지 않아야 함
     await expect(items).toHaveCount(2);
     const allText = await items.allTextContents();
     expect(allText.some((t) => t.includes("일기2의 회고"))).toBe(false);
@@ -81,7 +95,7 @@ test.describe("DiariesDetail 회고 바인딩", () => {
 
   test("로컬스토리지에 회고가 없으면 빈 목록이 표시된다", async ({ page }) => {
     await page.evaluate(() => localStorage.removeItem("retrospects"));
-    await page.reload();
+    await page.goto("/diaries/1");
     await page.waitForSelector('[data-testid="diaries-detail-container"]');
 
     const items = page.locator('[data-testid="retrospect-item"]');
