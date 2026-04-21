@@ -12,6 +12,7 @@ import { useDiaryRouting } from "./hooks/index.link.routing.hook";
 import { useDiarySearch } from "./hooks/index.search.hook";
 import { useDiaryFilter, FilterValue } from "./hooks/index.filter.hook";
 import { useDiaryPagination } from "./hooks/index.pagination.hook";
+import { useDiaryDelete } from "./hooks/index.delete.hook";
 import styles from "./styles.module.css";
 
 export default function Diaries() {
@@ -21,6 +22,7 @@ export default function Diaries() {
   const { filterValue, setFilterValue, filterOptions, emotionFilteredDiaries } = useDiaryFilter(filteredDiaries);
   const { currentPage, setCurrentPage, pagedDiaries, totalPages } = useDiaryPagination(emotionFilteredDiaries);
   const { openDiaryModal } = useDiaryModal();
+  const { isDeleteVisible, deleteDiary } = useDiaryDelete();
 
   return (
     <div className={styles.container} data-testid="diaries-container">
@@ -80,14 +82,36 @@ export default function Diaries() {
               onClick={() => navigateToDiaryDetail(diary.id)}
             >
               <div className={styles.cardImage}>
-                <Image
-                  src={emotionMeta.imageMedium}
-                  alt={emotionMeta.label}
-                  width={274}
-                  height={164}
-                  className={styles.emotionImage}
-                  data-testid="diary-card-emotion-image"
-                />
+                <div className={styles.cardImageInner}>
+                  <Image
+                    src={emotionMeta.imageMedium}
+                    alt={emotionMeta.label}
+                    width={274}
+                    height={164}
+                    className={styles.emotionImage}
+                    data-testid="diary-card-emotion-image"
+                  />
+                </div>
+                {isDeleteVisible && (
+                  <div className={styles.cardDeleteRow}>
+                    <button
+                      className={styles.cardDeleteBtn}
+                      data-testid={`diary-delete-btn-${diary.id}`}
+                      aria-label="일기 삭제"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        deleteDiary(diary.id);
+                      }}
+                    >
+                      <Image
+                        src="/icons/close_outline_light_s.svg"
+                        alt="삭제"
+                        width={16}
+                        height={16}
+                      />
+                    </button>
+                  </div>
+                )}
               </div>
               <div className={styles.cardContent}>
                 <div className={styles.cardHeader}>

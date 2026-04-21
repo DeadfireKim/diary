@@ -8,6 +8,7 @@ import { useDiaryBinding } from "./hooks/index.binding.hook";
 import { useRetrospectForm } from "./hooks/index.retrospect.form.hook";
 import { useRetrospectBinding } from "./hooks/index.retrospect.binding.hook";
 import { useUpdateDiary } from "./hooks/index.update.hook";
+import { useDiaryDetailDelete } from "./hooks/index.delete.hook";
 import styles from "./styles.module.css";
 
 export default function DiariesDetail() {
@@ -16,6 +17,7 @@ export default function DiariesDetail() {
 
   const diaryId = diary?.id ?? 0;
   const { register, onSubmit, isSubmitEnabled } = useRetrospectForm(diaryId);
+  const { deleteDiary } = useDiaryDetailDelete(diaryId);
   const {
     isEditMode,
     register: registerUpdate,
@@ -51,10 +53,6 @@ export default function DiariesDetail() {
 
   const handleCopyContent = () => {
     navigator.clipboard.writeText(diary.content);
-  };
-
-  const handleDelete = () => {
-    console.log("Delete clicked");
   };
 
   return (
@@ -135,8 +133,9 @@ export default function DiariesDetail() {
           variant="secondary"
           size="medium"
           theme="light"
-          onClick={handleDelete}
+          onClick={deleteDiary}
           className={styles.deleteButton}
+          data-testid="delete-diary-button"
         >
           삭제
         </Button>

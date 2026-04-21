@@ -82,10 +82,17 @@
 }
 
 .cardImage {
+  display: grid;
   width: 274px;
   height: 164px;
   overflow: hidden;
   flex-shrink: 0;
+}
+
+.cardImageInner {
+  grid-area: 1 / 1;
+  width: 274px;
+  height: 164px;
 }
 
 .emotionImage {
@@ -125,6 +132,32 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+/* Card Delete Row */
+.cardDeleteRow {
+  grid-area: 1 / 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding: 8px;
+  z-index: 1;
+}
+
+.cardDeleteBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.cardDeleteBtn:hover {
+  background-color: var(--color-gray-10);
 }
 
 /* Gap: 1120 * 40 */
